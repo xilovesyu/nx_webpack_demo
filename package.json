@@ -71,7 +71,6 @@
     "webpack-merge": "^4.2.2"
   },
   "scripts": {
-    "build": "lerna exec --parallel -- babel src -d build --ignore **/*.story.js,**/*.spec.js",
-    "build2": "lerna exec --parallel yarn build"
+    "build": "lerna exec --parallel yarn build --loglevel=info"
   }
 }

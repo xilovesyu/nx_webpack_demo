@@ -4,7 +4,8 @@
   "main": "build/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "babel src -d build --config-file ./.babelrc --extensions \".js,.jsx,.ts,.tsx\" --watch"
+    "dev": "babel src -d build --config-file ./.babelrc --extensions \".js,.jsx,.ts,.tsx\" --watch",
+    "build": "babel src -d build --config-file ./.babelrc --extensions \".js,.jsx,.ts,.tsx\""
   },
   "files": [
     "build/*"
