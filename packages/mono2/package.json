@@ -1,7 +1,7 @@
 {
   "name": "mono2",
   "version": "1.0.0",
-  "main": "src/index.jsx",
+  "main": "src/index.tsx",
   "license": "MIT",
   "dependencies": {
     "mono1": "1.0.0"

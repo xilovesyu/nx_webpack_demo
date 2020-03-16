@@ -13,7 +13,7 @@ module.exports = (env, args) => {
         {
             mode: mode,
             devtool: isProduction ? false : 'source-map',
-            entry: ['./src/index.jsx'],
+            entry: ['./src/index.tsx'],
             output: {
                 path: path.resolve(__dirname, 'build'), //must be absolute path,
                 filename: 'index.bundle.[hash:6].js',
