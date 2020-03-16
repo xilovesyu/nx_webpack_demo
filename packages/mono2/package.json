@@ -1,0 +1,13 @@
+{
+  "name": "mono2",
+  "version": "1.0.0",
+  "main": "src/index.jsx",
+  "license": "MIT",
+  "dependencies": {
+    "mono1": "1.0.0"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --mode=development --config=webpack.config.dev.js --define process.env.NODE_ENV='\"development\"'",
+    "build": "webpack --mode=production --config=webpack.config.prod.js"
+  }
+}
