@@ -67,7 +67,12 @@ module.exports = (env, args) => {
                                     ]
                                 }
                             }
-                        }, 'less-loader'],
+                        }, {
+                            loader: 'less-loader',
+                            options: {
+                                javascriptEnabled: true
+                            }
+                        }],
                         exclude: /node_modules/
                     },
                     //loader for antd styles.
@@ -98,7 +103,7 @@ module.exports = (env, args) => {
                                 javascriptEnabled: true
                             }
                         }],
-                        include: path.join(__dirname, '/node_modules/antd')
+                        include: [path.join(__dirname, '../../node_modules/antd')]
                     },
                     {
                         test: /\.(jpg|png|gif|webp|svg|eot|ttf|woff|woff2)/,
