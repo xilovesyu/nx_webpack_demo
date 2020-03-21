@@ -5,5 +5,8 @@ build
 node_modules
 yarn-error.log
 
+#jest
+coverage
+
 #idea
 .idea/**

@@ -1,0 +1,19 @@
+{
+  "name": "jest",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "babel src -d build --config-file ./.babelrc --extensions \".js,.jsx,.ts,.tsx\" --watch",
+    "build": "yarn tsc && babel src -d build --config-file ./.babelrc --extensions \".js,.jsx,.ts,.tsx\"",
+    "tsc": "tsc --declaration --outDir build/ --emitDeclarationOnly --allowJs false --checkJs false",
+    "jest": "jest src/jest.test.ts",
+    "coverage": "jest src/jest.test.ts --coverage"
+  },
+  "files": [
+    "build/*"
+  ],
+  "devDependencies": {
+    "babel-jest": "^25.1.0"
+  }
+}
