@@ -71,6 +71,6 @@
     "webpack-merge": "^4.2.2"
   },
   "scripts": {
-    "build": "lerna exec --parallel yarn build --loglevel=info"
+    "build": "lerna run --stream build --loglevel=info"
   }
 }
