@@ -1,3 +1,4 @@
+// noinspection WebpackConfigHighlighting
 module.exports = {
     development: {
         title: 'Demo For Development',
