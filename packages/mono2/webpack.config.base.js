@@ -16,8 +16,7 @@ module.exports = (env, args) => {
             entry: ['./src/index.tsx'],
             output: {
                 path: path.resolve(__dirname, 'build'), //must be absolute path,
-                filename: 'index.bundle.[hash:6].js',
-                publicPath: '/'
+                filename: 'index.bundle.[hash:6].js'
             },
             externals: {
                 'react': 'React', //for import react from html with cdn

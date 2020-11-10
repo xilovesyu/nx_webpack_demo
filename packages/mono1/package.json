@@ -5,8 +5,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "babel src -d build --config-file ./.babelrc --extensions \".js,.jsx,.ts,.tsx\" --watch",
-    "build": "yarn tsc && babel src -d build --config-file ./.babelrc --extensions \".js,.jsx,.ts,.tsx\"",
-    "tsc": "tsc --declaration --outDir build/ --emitDeclarationOnly --allowJs false --checkJs false"
+    "build": "yarn tsc && babel src -d build --config-file ./.babelrc --extensions \".js,.jsx,.ts,.tsx\" && yarn copyFiles",
+    "tsc": "tsc --declaration --outDir build/ --emitDeclarationOnly --allowJs false --checkJs false",
+    "copyFiles": "cpx \"./src/**/*.{json,less,ico,html,gif,svg,png,ttf,woff,woff2,js,jsx}\" ./build/"
   },
   "files": [
     "build/*"
