@@ -1,16 +1,15 @@
 import * as React from 'react'
 import { Input } from 'antd'
-import testImg from '../pic/apple.svg'
+import { InputProps } from 'antd/lib/input'
 
-interface CustomInputProps {
-    'aria-label': string;
+interface CustomInputProps extends InputProps{
+    'aria-label': string
 }
 export class CustomInput extends React.Component<CustomInputProps, any> {
     render(): any {
         return (
             <>
-                <img src={testImg} alt={'test'} />
-            <Input aria-label={this.props['aria-label']} {...this.props}/>
+                <Input {...this.props} />
             </>
         )
     }

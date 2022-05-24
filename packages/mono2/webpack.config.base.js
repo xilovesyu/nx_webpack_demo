@@ -8,6 +8,7 @@ const MomentLocalesPlugin = require('moment-locales-webpack-plugin')//removed un
 module.exports = (env, args) => {
     const mode = args.mode ? args.mode : 'production'
     const isProduction = mode === 'production'
+
     console.log('mode:', mode)
     return (
         {
@@ -28,15 +29,16 @@ module.exports = (env, args) => {
             module: {
                 rules: [
                     {
-                        test: /\.js[x]?$/,
-                        use: 'babel-loader',
-                        exclude: /node_modules/
-                    },
-                    {
-                        test: /\.ts[x]?/,
-                        use: 'babel-loader',
-                        include: path.join(__dirname, 'src'),
-                        exclude: /node_modules/
+                        test: /\.[jt]s[x]?$/,
+                        exclude: /node_modules/,
+                        use: [
+                            {
+                                loader: 'babel-loader',
+                                options: {
+                                    //extra options
+                                },
+                            },
+                        ],
                     },
                     {
                         test: /\.less/,

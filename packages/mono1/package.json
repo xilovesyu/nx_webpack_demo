@@ -1,10 +1,10 @@
 {
-  "name": "mono1",
+  "name": "@demo/mono1",
   "version": "1.0.0",
   "main": "build/index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "babel src -d build --config-file ./.babelrc --extensions \".js,.jsx,.ts,.tsx\" --watch",
+    "start": "babel src -d build --config-file ./.babelrc --extensions \".js,.jsx,.ts,.tsx\" --watch",
     "build": "yarn tsc && babel src -d build --config-file ./.babelrc --extensions \".js,.jsx,.ts,.tsx\" && yarn copyFiles",
     "tsc": "tsc --declaration --outDir build/ --emitDeclarationOnly --allowJs false --checkJs false",
     "copyFiles": "cpx \"./src/**/*.{json,less,ico,html,gif,svg,png,ttf,woff,woff2,js,jsx}\" ./build/"

@@ -1,13 +1,17 @@
 {
-  "name": "mono2",
+  "name": "@demo/main",
   "version": "1.0.0",
   "main": "src/index.tsx",
   "license": "MIT",
   "dependencies": {
-    "mono1": "1.0.0"
+    "@demo/mono1": "1.0.0"
   },
   "scripts": {
-    "dev": "webpack-dev-server --mode=development --config=webpack.config.dev.js --define process.env.NODE_ENV='\"development\"'",
+    "start": "webpack-dev-server --mode=development --config=webpack.config.dev.js --define process.env.NODE_ENV='\"development\"'",
     "build": "webpack --mode=production --config=webpack.config.prod.js"
+  },
+  "devDependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
+    "react-refresh": "^0.13.0"
   }
 }
