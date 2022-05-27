@@ -11,8 +11,9 @@ export const CustomInput: React.FC<CustomInputProps> = (
   const { id } = props
   return (
     <div>
-      <label htmlFor={id} />
-      <Input {...props} id={id} />
+      <label htmlFor={id} >
+        <Input {...props} id={id} />
+      </label>
     </div>
   )
 }

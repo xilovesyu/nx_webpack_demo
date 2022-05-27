@@ -82,6 +82,6 @@
     "build": "lerna run --stream build --loglevel=info",
     "start": "lerna run start --parallel",
     "prepare": "husky install",
-    "lint": "eslint packages/*/src/*.{js,jsx,ts,tsx,md}"
+    "lint": "eslint packages/**/src/**/*.{js,jsx,ts,tsx} --fix"
   }
 }
