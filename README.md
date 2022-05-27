@@ -5,4 +5,3 @@
 1. Copy mono1
 
 2. Change the package name in package.json
-

@@ -47,6 +47,7 @@
     "cpx": "1.5.0",
     "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
+    "eslint-config-prettier": "8.5.0",
     "eslint-import-resolver-webpack": "^0.12.1",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
@@ -54,13 +55,16 @@
     "eslint-plugin-react-hooks": "^2.5.0",
     "file-loader": "^5.1.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^8.0.1",
     "lerna": "4.0.0",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
+    "lint-staged": "^12.4.2",
     "mini-css-extract-plugin": "^0.9.0",
     "moment-locales-webpack-plugin": "^1.1.2",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
+    "prettier": "2.6.2",
     "style-loader": "^1.1.3",
     "terser-webpack-plugin": "^2.3.5",
     "typescript": "^3.8.3",
@@ -76,6 +80,8 @@
   },
   "scripts": {
     "build": "lerna run --stream build --loglevel=info",
-    "start": "lerna run start --parallel"
+    "start": "lerna run start --parallel",
+    "prepare": "husky install",
+    "lint": "eslint packages/*/src/*.{js,jsx,ts,tsx,md}"
   }
 }

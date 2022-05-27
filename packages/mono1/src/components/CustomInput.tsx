@@ -2,15 +2,17 @@ import * as React from 'react'
 import { Input } from 'antd'
 import { InputProps } from 'antd/lib/input'
 
-interface CustomInputProps extends InputProps{
-    'aria-label': string
+interface CustomInputProps extends InputProps {
+  id: string
 }
-export class CustomInput extends React.Component<CustomInputProps, any> {
-    render(): any {
-        return (
-            <>
-                <Input {...this.props} />
-            </>
-        )
-    }
+export const CustomInput: React.FC<CustomInputProps> = (
+  props: CustomInputProps
+) => {
+  const { id } = props
+  return (
+    <div>
+      <label htmlFor={id} />
+      <Input {...props} id={id} />
+    </div>
+  )
 }
