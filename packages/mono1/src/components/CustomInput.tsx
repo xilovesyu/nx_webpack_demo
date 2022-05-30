@@ -1,7 +1,6 @@
-import * as React from 'react'
+import React from 'react'
 import { Input } from 'antd'
-import { InputProps } from 'antd/lib/input'
-
+import {InputProps} from 'antd/lib/input'
 interface CustomInputProps extends InputProps {
   id: string
 }
