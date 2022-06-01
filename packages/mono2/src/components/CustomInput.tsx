@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Input } from 'antd'
 
 interface CustomInputProps {
-  label: string
+  label: string,
 }
 export class CustomInput extends React.Component<CustomInputProps, any> {
   render(): any {

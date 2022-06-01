@@ -1,3 +1,3 @@
 module.exports = {
-    "packages/**/src/**/*.{js,jsx,ts,tsx}": "yarn lint"
+    "packages/**/src/**/*.{js,jsx,ts,tsx}": "yarn lint:fix"
 }

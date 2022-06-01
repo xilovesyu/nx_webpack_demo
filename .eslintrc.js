@@ -6,6 +6,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:jsx-a11y/recommended',
+    //ignore styles lint and will use prettier
     'prettier'
   ],
   //plugins used except extends
