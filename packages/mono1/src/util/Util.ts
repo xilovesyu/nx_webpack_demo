@@ -1,4 +1,4 @@
-export const testPromise = new Promise(resolve => {
+export const testPromise = new Promise((resolve) => {
   resolve('hello world')
 })
 
