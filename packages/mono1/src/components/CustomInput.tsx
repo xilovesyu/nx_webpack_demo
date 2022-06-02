@@ -1,6 +1,6 @@
 import React from 'react'
 import { Input } from 'antd'
-import {InputProps} from 'antd/lib/input'
+import { InputProps } from 'antd/lib/input'
 interface CustomInputProps extends InputProps {
   id: string
 }
@@ -10,7 +10,7 @@ export const CustomInput: React.FC<CustomInputProps> = (
   const { id } = props
   return (
     <div>
-      <label htmlFor={id} >
+      <label htmlFor={id}>
         <Input {...props} id={id} />
       </label>
     </div>

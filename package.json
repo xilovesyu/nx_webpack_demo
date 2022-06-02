@@ -84,7 +84,7 @@
     "build": "lerna run --stream build --loglevel=info",
     "start": "lerna run start --parallel",
     "prepare": "husky install",
-    "prettier:write": "prettier --write --ignore-unknown .",
+    "prettier:write": "prettier --write --ignore-unknown . && git add .",
     "lint:fix": "eslint --ext *.{js,jsx,ts,tsx} packages/**/src/**/*.{js,jsx,ts,tsx} --fix",
     "lint:test": "eslint --ext *.{js,jsx,ts,tsx} packages/**/src/**/*.{js,jsx,ts,tsx}"
   }

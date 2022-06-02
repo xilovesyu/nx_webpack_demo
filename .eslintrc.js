@@ -42,7 +42,7 @@ module.exports = {
     camelcase: [2, { ignoreDestructuring: true, ignoreImports: true }],
     quotes: ['error', 'single'],
     'comma-dangle': ['error', 'never'],
-    'no-console': ["error", { allow: ["warn", "error"] }],
+    'no-console': ['error', { allow: ['warn', 'error'] }],
     'no-var-requires': 0,
     'no-unused-vars': 2,
     '@typescript-eslint/camelcase': 0, //for typescript
