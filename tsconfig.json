@@ -1,27 +1,105 @@
 {
   "compilerOptions": {
-    // Target latest version of ECMAScript.
-    "target": "esnext",
-    // Search under node_modules for non-relative imports.
-    "moduleResolution": "node",
-    // Don't emit; allow Babel to transform files.
-    "noEmit": false,
-    // Enable strictest settings like strictNullChecks & noImplicitAny.
+    //////Type checking//////
+    //allowUnreachableCode,
+    //allowUnusedLabels,
+    //alwaysStrict,
+    //exactOptionalPropertyTypes,
+    //noFallthroughCasesInSwitch,
+    //noImplicitAny,
+    //noImplicitOverride,
+    //noImplicitReturns,
+    //noImplicitThis,
+    //noPropertyAccessFromIndexSignature,
+    //noUncheckedIndexedAccess,
+    //noUnusedLocals,
+    //noUnusedParameters,
+    //strict,
     "strict": true,
-    // Disallow features that require cross-file information for emit.
-    "isolatedModules": true,
-    // Import non-ES modules as default imports.
-    "esModuleInterop": true,
-    // jsx handler
-    "jsx": "preserve",
-    "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
-    //go to definitions
+    //strictBindCallApply,
+    //strictFunctionTypes,
+    //strictNullChecks,
+    //strictPropertyInitialization
+    //useUnknownInCatchVariables
+
+    /////Modules//////
+    //allowUmdGlobalAccess
+    //baseUrl
     "baseUrl": ".",
+    //module
+    "module": "ESNext",
+    //moduleResolution
+    "moduleResolution": "node",
+    //noResolve
+    //paths
     "paths": {
-      "@demo/*": ["packages/*/src"],
+      "@demo/*": ["packages/*/src/"],
       "*": ["node_modules"]
-    }
+    },
+    //resolveJsonModule
+    //rootDir
+    //rootDirs
+    //typeRoots
+    //types
+
+    /////Emit////
+    //declaration
+    "declaration": true,
+    //declarationDir
+    //declarationMap
+    "declarationMap": true,
+    //downlevelIteration
+    //emitBOM
+    //emitDeclarationOnly
+    //importHelpers
+    //importsNotUsedAsValues
+    //inlineSourceMap
+    //inlineSources
+    //mapRoot
+    //newLine
+    //noEmit
+    //noEmitHelpers
+    //noEmitOnError
+    //outDir
+    //outFile
+    //preserveConstEnums
+    //preserveValueImports
+    //removeComments
+    //sourceMap
+    //sourceRoot
+    //stripInternal
+
+    //////Javascript Support//////
+    //allowJs
+    //checkJs
+    //maxNodeModuleJsDepth
+
+    //////Interop Constraints////
+    //allowSyntheticDefaultImports
+    "allowSyntheticDefaultImports": true,
+    //esModuleInterop
+    "esModuleInterop": true,
+    //forceConsistentCasingInFileNames
+    "forceConsistentCasingInFileNames": true,
+    //isolatedModules
+    "isolatedModules": true,
+    //preserveSymlinks
+
+    //////Language and Environment/////
+    //emitDecoratorMetadata
+    //experimentalDecorators
+    "experimentalDecorators": true,
+    //jsx
+    "jsx": "preserve",
+    //jsxFactory
+    //jsxFragmentFactory
+    //jsxImportSource
+    //lib
+    //noLib
+    //reactNamespace
+    //target
+    "target": "ESNext"
+    //useDefineForClassFields
   },
   "exclude": ["node_modules", "dist", "target", "build", "lib"]
 }

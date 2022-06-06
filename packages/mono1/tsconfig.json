@@ -4,6 +4,5 @@
     "allowJs": true,
     "outDir": "./dist"
   },
-  "include": ["src/**/*", "typings/**/*"],
-  "exclude": ["build", "dist", "node_modules"]
+  "include": ["src/**/*", "typings/**/*"]
 }
