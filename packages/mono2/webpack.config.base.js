@@ -8,15 +8,16 @@ const MomentLocalesPlugin = require('moment-locales-webpack-plugin') //removed u
 module.exports = (env, args) => {
   const mode = args.mode ? args.mode : 'production'
   const isProduction = mode === 'production'
+  const useEsBuild = process.env.ESBUILD ?? false
 
-  console.log('mode:', mode)
+  console.log('mode:', mode, useEsBuild)
   return {
     mode: mode,
     devtool: isProduction ? false : 'source-map',
     entry: ['./src/index.tsx'],
     output: {
       path: path.resolve(__dirname, 'build'), //must be absolute path,
-      filename: 'index.bundle.[hash:6].js'
+      filename: 'index.bundle.[contenthash:6].js'
     },
     externals: {
       react: 'React', //for import react from html with cdn
@@ -37,7 +38,7 @@ module.exports = (env, args) => {
     },
     module: {
       rules: [
-        {
+        !useEsBuild && {
           test: /\.[jt]s[x]?$/,
           exclude: /node_modules/,
           use: [
@@ -49,14 +50,14 @@ module.exports = (env, args) => {
             }
           ]
         },
-        // {
-        //   test: /\.[jt]s[x]?$/,
-        //   loader: 'esbuild-loader',
-        //   options: {
-        //     loader: 'tsx',  // Remove this if you're not using JSX
-        //     target: 'es2015'  // Syntax to compile to (see options below for possible values)
-        //   }
-        // },
+        useEsBuild && {
+          test: /\.[jt]s[x]?$/,
+          loader: 'esbuild-loader',
+          options: {
+            loader: 'tsx', // Remove this if you're not using JSX
+            target: 'es2015' // Syntax to compile to (see options below for possible values)
+          }
+        },
         {
           test: /\.less/,
           use: [
@@ -103,8 +104,8 @@ module.exports = (env, args) => {
             {
               loader: MiniCssExtractPlugin.loader,
               options: {
-                hmr: !isProduction,
-                reloadAll: true
+                //hmr: !isProduction,
+                //reloadAll: true
               }
             },
             {
@@ -113,18 +114,20 @@ module.exports = (env, args) => {
             {
               loader: 'less-loader',
               options: {
-                modifyVars: {
-                  'primary-color': '#1DA57A',
-                  'link-color': '#ff9af4',
-                  'success-color': '#52c41a',
-                  'font-size-base': '16px',
-                  'border-radius-base': '4px'
+                lessOptions: {
+                  modifyVars: {
+                    'primary-color': '#1DA57A',
+                    'link-color': '#ff9af4',
+                    'success-color': '#52c41a',
+                    'font-size-base': '16px',
+                    'border-radius-base': '4px'
 
-                  //dark mode
-                  //'hack': `true;@import "${require.resolve('antd/lib/style/color/colorPalette.less')}";`,
-                  // ...darkThemeVars
-                },
-                javascriptEnabled: true
+                    //dark mode
+                    //'hack': `true;@import "${require.resolve('antd/lib/style/color/colorPalette.less')}";`,
+                    // ...darkThemeVars
+                  },
+                  javascriptEnabled: true
+                }
               }
             }
           ],
@@ -136,7 +139,7 @@ module.exports = (env, args) => {
             {
               loader: 'url-loader',
               options: {
-                name: '[name]-[hash:5].[ext]',
+                name: '[name]-[contenthash:5].[ext]',
                 limit: 1024,
                 esModule: false,
                 outputPath: 'assets'
@@ -145,7 +148,7 @@ module.exports = (env, args) => {
           ],
           exclude: /node_modules/
         }
-      ]
+      ].filter(Boolean)
     },
     plugins: [
       new HtmlWebpackPlugin({

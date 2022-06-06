@@ -1,10 +1,15 @@
-const merge = require('webpack-merge')
+const { merge } = require('webpack-merge')
 const baseConfig = require('./webpack.config.base')
-//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin//analyzer
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin //analyzer
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
 
 module.exports = (env, args) => {
+  const bundleAnalyzer = process.env.BUNDLE_ANALYZE ?? false
+  const speedAnalyzer = process.env.SPEED_MEASURE ?? false
+
   return merge(baseConfig(env, args), {
     optimization: {
       minimize: true,
@@ -12,11 +17,12 @@ module.exports = (env, args) => {
         new TerserJSPlugin({
           parallel: true
         }),
-        new OptimizeCssAssetsPlugin()
+        new CssMinimizerPlugin()
       ]
     },
     plugins: [
-      //new BundleAnalyzerPlugin()
-    ]
+      bundleAnalyzer && new BundleAnalyzerPlugin(),
+      speedAnalyzer && new SpeedMeasurePlugin()
+    ].filter(Boolean)
   })
 }

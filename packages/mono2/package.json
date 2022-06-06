@@ -8,7 +8,10 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode=development --config=webpack.config.dev.js --define process.env.NODE_ENV='\"development\"'",
-    "build": "webpack --mode=production --config=webpack.config.prod.js"
+    "build": "webpack --mode=production --config=webpack.config.prod.js",
+    "build:es": "cross-env ESBUILD=true webpack --mode=production --config=webpack.config.prod.js",
+    "build:analyze": "cross-env SPEED_MEASURE=true BUNDLE_ANALYZE=true webpack --mode=production --config=webpack.config.prod.js",
+    "build:es:analyze": "cross-env ESBUILD=true SPEED_MEASURE=true BUNDLE_ANALYZE=true webpack --mode=production --config=webpack.config.prod.js"
   },
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
