@@ -49,6 +49,14 @@ module.exports = (env, args) => {
             }
           ]
         },
+        // {
+        //   test: /\.[jt]s[x]?$/,
+        //   loader: 'esbuild-loader',
+        //   options: {
+        //     loader: 'tsx',  // Remove this if you're not using JSX
+        //     target: 'es2015'  // Syntax to compile to (see options below for possible values)
+        //   }
+        // },
         {
           test: /\.less/,
           use: [
