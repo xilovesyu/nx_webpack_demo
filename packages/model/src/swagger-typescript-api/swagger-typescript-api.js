@@ -2,7 +2,6 @@
 /* eslint-disable no-unused-vars */
 const { generateApi } = require('swagger-typescript-api')
 const path = require('path')
-const fs = require('fs')
 
 //https://github.com/acacode/swagger-typescript-api
 /* NOTE: all fields are optional expect one of `output`, `url`, `spec` */

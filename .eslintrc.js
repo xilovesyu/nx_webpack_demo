@@ -40,7 +40,7 @@ module.exports = {
     semi: ['error', 'never'],
     //https://eslint.org/docs/rules/camelcase
     camelcase: [2, { ignoreDestructuring: true, ignoreImports: true }],
-    quotes: ['error', 'single'],
+    quotes: ['error', 'single', { avoidEscape: true }],
     'comma-dangle': ['error', 'never'],
     'no-console': ['error', { allow: ['warn', 'error'] }],
     'no-var-requires': 0,

@@ -90,7 +90,7 @@
     "start": "lerna run start --parallel",
     "prepare": "husky install",
     "clean": "",
-    "prettier_and_stage": "prettier --write --ignore-unknown . && git add .",
+    "prettier_and_stage": "prettier --write --ignore-unknown . ",
     "lint:fix": "eslint --ext *.{js,jsx,ts,tsx} packages/**/src/**/*.{js,jsx,ts,tsx} --fix",
     "lint:test": "eslint --ext *.{js,jsx,ts,tsx} packages/**/src/**/*.{js,jsx,ts,tsx}"
   }
