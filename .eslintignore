@@ -2,3 +2,6 @@
 .prettierrc.js
 .lintstagedrc.js
 webpack.config.*.js
+automatic
+build
+target

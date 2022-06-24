@@ -1,11 +1,11 @@
-import { CustomInput } from '@demo/mono1'
 import * as React from 'react'
 import ReactDOM from 'react-dom'
+import { App } from './App'
 
 const TestApp = () => {
   return (
     <div>
-      <CustomInput id='ffff' />
+      <App />
     </div>
   )
 }

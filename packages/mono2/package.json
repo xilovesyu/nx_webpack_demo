@@ -7,7 +7,7 @@
     "@demo/mono1": "1.0.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode=development --config=webpack.config.dev.js --define process.env.NODE_ENV='\"development\"'",
+    "start": "cross-env  process.env.NODE_ENV='\"development\"' webpack-dev-server --mode=development --config=webpack.config.dev.js",
     "build": "webpack --mode=production --config=webpack.config.prod.js",
     "build:es": "cross-env ESBUILD=true webpack --mode=production --config=webpack.config.prod.js",
     "build:analyze": "cross-env SPEED_MEASURE=true BUNDLE_ANALYZE=true webpack --mode=production --config=webpack.config.prod.js",
