@@ -1,16 +1,19 @@
 const webpack = require('webpack')
 const { merge } = require('webpack-merge')
 const baseConfig = require('./webpack.config.base.js')
-//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin//analyzer
+//analyzer
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 module.exports = (env, args) => {
+  const analyzerMode = process.env.ANALYZE_BUNDLE === 'true'
+
   return merge(baseConfig(env, args), {
     plugins: [
-      new webpack.HotModuleReplacementPlugin() //hot update plugin
-      //new BundleAnalyzerPlugin()
-    ],
+      new webpack.HotModuleReplacementPlugin(), //hot update plugin
+      analyzerMode && new BundleAnalyzerPlugin()
+    ].filter(Boolean),
     devServer: {
-      port: 8001,
+      port: 3001,
       hot: true,
       host: '0.0.0.0'
       //stats: 'errors-only' //only prints error in console

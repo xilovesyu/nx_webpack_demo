@@ -87,7 +87,7 @@
   },
   "scripts": {
     "build": "lerna run --stream build --loglevel=info",
-    "start": "lerna run start --parallel",
+    "start": "lerna run start",
     "prepare": "husky install",
     "clean": "",
     "prettier_and_stage": "prettier --write --ignore-unknown . ",

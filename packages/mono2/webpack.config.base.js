@@ -5,12 +5,14 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin') //removed unused moment locales
 
+//env, webpack env for example, webpack --env entry='./app.js'
 module.exports = (env, args) => {
-  const mode = args.mode ? args.mode : 'production'
+  const mode =
+    process.env.NODE_ENV === 'development' ? 'development' : 'production'
   const isProduction = mode === 'production'
-  const useEsBuild = process.env.ESBUILD ?? false
+  const useEsBuild = process.env.ES_BUILD === 'true' ?? false
 
-  console.log('mode:', mode, useEsBuild)
+  console.log('current mode: ', mode, 'use es build?: ', useEsBuild)
   return {
     mode: mode,
     devtool: isProduction ? false : 'source-map',
