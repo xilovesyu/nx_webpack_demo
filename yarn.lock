@@ -2599,6 +2599,122 @@
     remark "^13.0.0"
     unist-util-find-all-after "^3.0.2"
 
+"@swc/cli@^0.1.57":
+  version "0.1.57"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/cli/-/cli-0.1.57.tgz#a9c424de5a217ec20a4b7c2c0e5c343980537e83"
+  integrity sha512-HxM8TqYHhAg+zp7+RdTU69bnkl4MWdt1ygyp6BDIPjTiaJVH6Dizn2ezbgDS8mnFZI1FyhKvxU/bbaUs8XhzQg==
+  dependencies:
+    commander "^7.1.0"
+    fast-glob "^3.2.5"
+    slash "3.0.0"
+    source-map "^0.7.3"
+
+"@swc/core-android-arm-eabi@1.2.248":
+  version "1.2.248"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/core-android-arm-eabi/-/core-android-arm-eabi-1.2.248.tgz#dfc9ffe76b56130ea0ba44359a129e99b7dae8d7"
+  integrity sha512-+n4fyGnGWnhV/GanN99N5FkgCF0JdJVViecsA0eAEXF35+qZ0PO3YgDx3EfBXA35utddXZwskZ9q71cjSPv4Rg==
+  dependencies:
+    "@swc/wasm" "1.2.122"
+
+"@swc/core-android-arm64@1.2.248":
+  version "1.2.248"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/core-android-arm64/-/core-android-arm64-1.2.248.tgz#6aef149f336b2c3279802158d12e28310d858c2a"
+  integrity sha512-/eXNTuWpAiJsP/DkO2hr4B+a6oS605sRq6Y2ry7sc+7bS8jkDloryD3Lkyv6h1RgRrv33uRCt0+JLN+odeeBSA==
+  dependencies:
+    "@swc/wasm" "1.2.130"
+
+"@swc/core-darwin-arm64@1.2.248":
+  version "1.2.248"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/core-darwin-arm64/-/core-darwin-arm64-1.2.248.tgz#a6341313c5b3848323204e830da81121254a205a"
+  integrity sha512-rd9UwNuFhMk4WxoFmba2HKNrPevh8p/syEtjThyQ+kcMLU1D5yA3WwYEyPvnLgytlkJvsUIjVjV15i8lNSU0TQ==
+
+"@swc/core-darwin-x64@1.2.248":
+  version "1.2.248"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/core-darwin-x64/-/core-darwin-x64-1.2.248.tgz#44198802de856ac3030adf6224a0cd73d4b39c9c"
+  integrity sha512-ouexUd719FZ4CEGl2HDZEGJV4nAhcRJ6BUMO0IOxK0MRJEDvqTiW98nSqTbOz22GHTy9Z0n5vkc5nOkuDfTJTQ==
+
+"@swc/core-freebsd-x64@1.2.248":
+  version "1.2.248"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/core-freebsd-x64/-/core-freebsd-x64-1.2.248.tgz#b25e587df4920226f66ed2f1928918a4550d6293"
+  integrity sha512-rV4h0dGqz9x5xRGGRXKQ5MzAep90PkjLIXIcPG16M8pJQFNhS6Ebslxvh//6GIvTONE9VU/86CHWJ8FJHedUPA==
+  dependencies:
+    "@swc/wasm" "1.2.130"
+
+"@swc/core-linux-arm-gnueabihf@1.2.248":
+  version "1.2.248"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.2.248.tgz#ce1b1784b43619d88e7bc0a47f1fe1bebb8ab368"
+  integrity sha512-8ZOPx9+tuLQ86cvFd3+FVBsodxFWvczJRzfLamxScEGywMsQ+Jz6vMEXAo0AbSjNjJG01DXeiVkqqyCD3Rpmug==
+  dependencies:
+    "@swc/wasm" "1.2.130"
+
+"@swc/core-linux-arm64-gnu@1.2.248":
+  version "1.2.248"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.2.248.tgz#08d647f945b7a7771b25db92e0daf346078cbb16"
+  integrity sha512-drJgH/s9p+4DMw7E6RxNSwj9M/0o0DWfTgO11D/afSTIR9hZfZSjC1cjpGS93jnW52H6iMWPHhcTOidHtvmVPg==
+
+"@swc/core-linux-arm64-musl@1.2.248":
+  version "1.2.248"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.2.248.tgz#c3aad83c1f3421ff0edc5b901bed8b28f4a00db0"
+  integrity sha512-qhntKjnAtpbHyOVJPX/LQdOdngATFXiBc8S7f5hrkn6AdK3WmojUapZbiy+0YRYxjoRrMWy/ubY8J2JWyHKeZg==
+
+"@swc/core-linux-x64-gnu@1.2.248":
+  version "1.2.248"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.2.248.tgz#6e0c90adcf459d56f92b31acb10a7c3ef057fdfa"
+  integrity sha512-NcWuAuWg0N7/KXOk2JtYG4crFqhWrFV2d9shDr5PLm9bAbgSebqxGjAluQbTQjGM+ABpZ3PO4IuaCfyui3abqQ==
+
+"@swc/core-linux-x64-musl@1.2.248":
+  version "1.2.248"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.2.248.tgz#cfef61fcc7afeb6921c241bd960a4749008bc57f"
+  integrity sha512-E9bog6QK3DSGcK7UdpgsPVeDDCRv/SqoFOEYRYuDEOVgNkpte37pj1IdQCmN0gDHyyvuJxQ9+Knr9282DUJmQg==
+
+"@swc/core-win32-arm64-msvc@1.2.248":
+  version "1.2.248"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.2.248.tgz#513533c727ea4cb2b1509b4a7fb3a585c0b0f2cc"
+  integrity sha512-dzAFIo5gN0hJGdC9Ikzx+gtqhePpKN2brpK0hQLlEL/+ruClxTjGxOpPO9cSHR771uO62hgNn1lN0Vhx37gQMA==
+  dependencies:
+    "@swc/wasm" "1.2.130"
+
+"@swc/core-win32-ia32-msvc@1.2.248":
+  version "1.2.248"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.2.248.tgz#4165648f921a9146a55689d51de8ddebd50801ad"
+  integrity sha512-TjyHVop+4+hHVziyoUpQ7mBrgGShvbcFF0f+5mVzKzBJSjbKPsZEtu5qMi12r03g+4fCCHaq1QnWeq1uhke0rQ==
+  dependencies:
+    "@swc/wasm" "1.2.130"
+
+"@swc/core-win32-x64-msvc@1.2.248":
+  version "1.2.248"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.2.248.tgz#1de8d1a52ad39e626d41d24b5661e26002370b6b"
+  integrity sha512-XODvZBfUSoUdj0RqUyOkBD7HydE5vSDvcYSVLCmLWsgEDPJhUWiOZHoXMEvoTu5/BDNezUZn58DlKozCzWZQsQ==
+
+"@swc/core@^1.2.248":
+  version "1.2.248"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/core/-/core-1.2.248.tgz#2f0d8486901f121dddb96932de7eea365177c112"
+  integrity sha512-/HQJT2BIT5fkf6I6vK5fS5SKf34QedBQQNf0A38xRIAFhQjLBVWECRFySqKijaFoIzRv9Ic4DI6XwusBNfPUyA==
+  optionalDependencies:
+    "@swc/core-android-arm-eabi" "1.2.248"
+    "@swc/core-android-arm64" "1.2.248"
+    "@swc/core-darwin-arm64" "1.2.248"
+    "@swc/core-darwin-x64" "1.2.248"
+    "@swc/core-freebsd-x64" "1.2.248"
+    "@swc/core-linux-arm-gnueabihf" "1.2.248"
+    "@swc/core-linux-arm64-gnu" "1.2.248"
+    "@swc/core-linux-arm64-musl" "1.2.248"
+    "@swc/core-linux-x64-gnu" "1.2.248"
+    "@swc/core-linux-x64-musl" "1.2.248"
+    "@swc/core-win32-arm64-msvc" "1.2.248"
+    "@swc/core-win32-ia32-msvc" "1.2.248"
+    "@swc/core-win32-x64-msvc" "1.2.248"
+
+"@swc/wasm@1.2.122":
+  version "1.2.122"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/wasm/-/wasm-1.2.122.tgz#87a5e654b26a71b2e84b801f41e45f823b856639"
+  integrity sha512-sM1VCWQxmNhFtdxME+8UXNyPNhxNu7zdb6ikWpz0YKAQQFRGT5ThZgJrubEpah335SUToNg8pkdDF7ibVCjxbQ==
+
+"@swc/wasm@1.2.130":
+  version "1.2.130"
+  resolved "https://aws06mlicdevnexus01.aws06.mlic.cloud/repository/MLI-NPM/@swc/wasm/-/wasm-1.2.130.tgz#88ac26433335d1f957162a9a92f1450b73c176a0"
+  integrity sha512-rNcJsBxS70+pv8YUWwf5fRlWX6JoY/HJc25HD/F8m6Kv7XhJdqPPMhyX6TKkUBPAG7TWlZYoxa+rHAjPy4Cj3Q==
+
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.npmmirror.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
@@ -4595,7 +4711,7 @@ commander@^6.2.1:
   resolved "https://registry.npmmirror.com/commander/-/commander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
   integrity sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==
 
-commander@^7.0.0, commander@^7.2.0:
+commander@^7.0.0, commander@^7.1.0, commander@^7.2.0:
   version "7.2.0"
   resolved "https://registry.npmmirror.com/commander/-/commander-7.2.0.tgz#a36cb57d0b501ce108e4d20559a150a391d97ab7"
   integrity sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==
@@ -12233,15 +12349,15 @@ sirv@^1.0.7:
     mrmime "^1.0.0"
     totalist "^1.0.0"
 
+slash@3.0.0, slash@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npmmirror.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
+  integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
+
 slash@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-2.0.0.tgz#de552851a1759df3a8f206535442f5ec4ddeab44"
   integrity sha512-ZYKh3Wh2z1PpEXWr0MpSBZ0V6mZHAQfYevttO11c51CaWjGTaadiKZ+wVt1PbMlDV5qhMFslpZCemhwOK7C89A==
-
-slash@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmmirror.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
-  integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
 slice-ansi@^2.1.0:
   version "2.1.0"

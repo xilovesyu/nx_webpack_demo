@@ -5,8 +5,13 @@
   "license": "MIT",
   "scripts": {
     "babel": "babel src -d build --config-file ./.babelrc --extensions \".js,.jsx,.ts,.tsx\"",
-    "start": " yarn tsc && yarn babel --watch && yarn copyFiles",
-    "build": "yarn tsc && yarn babel && yarn copyFiles",
+    "swc": "swc ./src -d build --copy-files",
+    "start:babel": " yarn tsc && yarn babel --watch && yarn copyFiles",
+    "start:swc": "yarn tsc && swc ./src --watch --copy-files -d target -C jsc.transform.react.development=true -C jsc.transform.react.useBuiltins=false",
+    "start": "yarn start:swc",
+    "build:babel": "yarn tsc && yarn babel && yarn copyFiles",
+    "build:swc": "yarn swc",
+    "build": "yarn build:swc",
     "tsc": "tsc --declaration --outDir build/ --emitDeclarationOnly --allowJs false --checkJs false",
     "copyFiles": "cpx \"./src/**/*.{json,less,ico,html,gif,svg,png,ttf,woff,woff2,js,jsx}\" ./build/"
   },
