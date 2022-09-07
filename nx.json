@@ -1,0 +1,36 @@
+{
+  "extends": "nx/presets/npm.json",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": [
+          "swagger-typescript-api",
+          "umijs-openapi",
+          "swagger-codegen",
+          "simple-own-generator",
+          "simple-own-generator:tsc",
+          "babel",
+          "swc",
+          "build:babel",
+          "build:swc",
+          "build",
+          "tsc",
+          "copyFiles",
+          "build:es",
+          "build:analyze",
+          "build:es:analyze"
+        ],
+        "accessToken": "YTVmNTJhNGMtZTUwNi00NzAxLTk5ODQtNjc3MDFiYjViN2I3fHJlYWQtd3JpdGU="
+      }
+    }
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    }
+  },
+  "affected": {
+    "defaultBase": "master"
+  }
+}
