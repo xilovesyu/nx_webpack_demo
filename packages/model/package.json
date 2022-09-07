@@ -16,9 +16,6 @@
     "nunjucks": "3.2.3",
     "@types/nunjucks": "3.2.1"
   },
-  "dependencies": {
-    "umi-request": "1.4.0"
-  },
   "files": [
     "build/*"
   ]
