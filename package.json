@@ -82,14 +82,20 @@
     "webpack-bundle-analyzer": "4.5.0",
     "webpack-cli": "4.9.2",
     "webpack-dev-server": "4.9.1",
-    "webpack-merge": "5.8.0"
+    "webpack-merge": "5.8.0",
+    "nx": "14.6.5",
+    "@nrwl/nx-cloud": "latest"
   },
   "resolutions": {
     "minimist": "1.2.6"
   },
   "scripts": {
-    "build": "lerna run --stream build --loglevel=info",
-    "start": "lerna run start",
+    "build": "yarn build:nx",
+    "build:lerna": "lerna run --stream build --loglevel=info",
+    "build:nx": "yarn nx run-many --target=build",
+    "start": "yarn start:nx",
+    "start:lerna": "lerna run start",
+    "start:nx": "yarn nx run-many --target=start",
     "prepare": "husky install",
     "clean": "",
     "prettier_and_stage": "prettier --write --ignore-unknown . ",
