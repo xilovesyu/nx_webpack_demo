@@ -4,7 +4,9 @@
   "main": "src/index.tsx",
   "license": "MIT",
   "dependencies": {
-    "@demo/mono1": "1.0.0"
+    "@demo/mono1": "1.0.0",
+    "react-router": "6.4.3",
+    "react-router-dom": "6.4.3"
   },
   "scripts": {
     "start": "cross-env process.env.ES_BUILD=true process.env.ANALYZE_BUNDLE=false process.env.NODE_ENV='\"development\"' webpack-dev-server --config=webpack.config.dev.js",
