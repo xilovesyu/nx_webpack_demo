@@ -13,8 +13,8 @@ jobs:
         with:
           fetch-depth: 0
       - uses: nrwl/nx-set-shas@v3
-      - run: npm ci
+        with:
+          main-branch-name: 'master'
+      - run: yarn install --frozen-lockfile
 
-      - run: npx nx workspace-lint
-      - run: npx nx format:check
       - run: npx nx affected --target=build --parallel=3

@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: Run Nx Build ON Push Codes
 on: [push]
 jobs:
   Explore-GitHub-Actions:
