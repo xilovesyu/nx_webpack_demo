@@ -64,22 +64,7 @@ module.exports = (env, args) => {
           test: /\.less/,
           use: [
             {
-              loader: MiniCssExtractPlugin.loader,
-              options: {
-                hmr: !isProduction,
-                reloadAll: true,
-                stats: {
-                  all: false,
-                  assets: true,
-                  cachedAssets: true,
-                  errors: true,
-                  errorDetails: true,
-                  hash: true,
-                  performance: true,
-                  publicPath: true,
-                  timings: true
-                }
-              }
+              loader: MiniCssExtractPlugin.loader
             },
             'css-loader',
             {
@@ -93,7 +78,16 @@ module.exports = (env, args) => {
             {
               loader: 'less-loader',
               options: {
-                javascriptEnabled: true
+                lessOptions: {
+                  modifyVars: {
+                    'primary-color': '#1DA57A',
+                    'link-color': '#ff9af4',
+                    'success-color': '#52c41a',
+                    'font-size-base': '16px',
+                    'border-radius-base': '4px'
+                  },
+                  javascriptEnabled: true
+                }
               }
             }
           ],
@@ -104,11 +98,7 @@ module.exports = (env, args) => {
           test: /\.less/,
           use: [
             {
-              loader: MiniCssExtractPlugin.loader,
-              options: {
-                //hmr: !isProduction,
-                //reloadAll: true
-              }
+              loader: MiniCssExtractPlugin.loader
             },
             {
               loader: 'css-loader'
@@ -117,17 +107,6 @@ module.exports = (env, args) => {
               loader: 'less-loader',
               options: {
                 lessOptions: {
-                  modifyVars: {
-                    'primary-color': '#1DA57A',
-                    'link-color': '#ff9af4',
-                    'success-color': '#52c41a',
-                    'font-size-base': '16px',
-                    'border-radius-base': '4px'
-
-                    //dark mode
-                    //'hack': `true;@import "${require.resolve('antd/lib/style/color/colorPalette.less')}";`,
-                    // ...darkThemeVars
-                  },
                   javascriptEnabled: true
                 }
               }

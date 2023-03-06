@@ -10,11 +10,11 @@
   },
   "scripts": {
     "start": "cross-env process.env.ES_BUILD=true process.env.ANALYZE_BUNDLE=false process.env.NODE_ENV='\"development\"' webpack-dev-server --config=webpack.config.dev.js",
-    "start:analyze": "cross-env process.env.ES_BUILD=true process.env.ANALYZE_BUNDLE=true process.env.NODE_ENV='\"development\"' webpack-dev-server --config=webpack.config.dev.js",
+    "start:analyze": "cross-env process.env.ES_BUILD=false process.env.ANALYZE_BUNDLE=true process.env.NODE_ENV='\"development\"' webpack-dev-server --config=webpack.config.dev.js",
     "build": "webpack --mode=production --config=webpack.config.prod.js",
-    "build:es": "cross-env ESBUILD=true webpack --mode=production --config=webpack.config.prod.js",
+    "build:es": "cross-env process.env.ES_BUILD=true webpack --mode=production --config=webpack.config.prod.js",
     "build:analyze": "cross-env SPEED_MEASURE=true BUNDLE_ANALYZE=true webpack --config=webpack.config.prod.js",
-    "build:es:analyze": "cross-env ESBUILD=true SPEED_MEASURE=true BUNDLE_ANALYZE=true webpack --config=webpack.config.prod.js"
+    "build:es:analyze": "cross-env process.env.ES_BUILD=true SPEED_MEASURE=true BUNDLE_ANALYZE=true webpack --config=webpack.config.prod.js"
   },
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
