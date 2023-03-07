@@ -1,14 +1,19 @@
+import { ConfigProvider, theme } from 'antd'
 import * as React from 'react'
 import ReactDOM from 'react-dom'
 import { App } from './App'
 import './index.less'
 
-const TestApp = () => {
+const Index = () => {
   return (
-    <div>
+    <ConfigProvider
+      theme={{
+        algorithm: theme.darkAlgorithm
+      }}
+    >
       <App />
-    </div>
+    </ConfigProvider>
   )
 }
 
-ReactDOM.render(<TestApp />, document.getElementById('content'))
+ReactDOM.render(<Index />, document.getElementById('content'))

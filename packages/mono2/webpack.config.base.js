@@ -79,40 +79,12 @@ module.exports = (env, args) => {
               loader: 'less-loader',
               options: {
                 lessOptions: {
-                  modifyVars: {
-                    'primary-color': '#1DA57A',
-                    'link-color': '#ff9af4',
-                    'success-color': '#52c41a',
-                    'font-size-base': '16px',
-                    'border-radius-base': '4px'
-                  },
                   javascriptEnabled: true
                 }
               }
             }
           ],
           exclude: /node_modules/
-        },
-        //loader for antd styles.
-        {
-          test: /\.less/,
-          use: [
-            {
-              loader: MiniCssExtractPlugin.loader
-            },
-            {
-              loader: 'css-loader'
-            },
-            {
-              loader: 'less-loader',
-              options: {
-                lessOptions: {
-                  javascriptEnabled: true
-                }
-              }
-            }
-          ],
-          include: [path.join(__dirname, '../../node_modules/antd')]
         },
         {
           test: /\.(jpg|png|gif|webp|svg|eot|ttf|woff|woff2)/,
