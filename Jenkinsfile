@@ -8,8 +8,19 @@ pipeline {
     }
 
     stage('List Files') {
-      steps {
-        sh 'ls -la'
+      parallel {
+        stage('List Files') {
+          steps {
+            sh 'ls -la'
+          }
+        }
+
+        stage('Run Build') {
+          steps {
+            sh 'yarn && yarn build'
+          }
+        }
+
       }
     }
 
