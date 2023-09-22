@@ -4,18 +4,9 @@
   "main": "build/index.js",
   "license": "MIT",
   "scripts": {
-    "swagger-typescript-api": "node ./src/swagger-typescript-api/swagger-typescript-api.js",
-    "umijs-openapi": "node ./src/umijs-openapi/openapi.config.js",
-    "swagger-codegen": "node ./src/swagger-codegen/swagger-codegen.js",
-    "simple-own-generator": "rm -rf ./src/simple-own-generator/build/ && yarn simple-own-generator:tsc && node ./src/simple-own-generator/build/index.js",
-    "simple-own-generator:tsc": "tsc --declaration --outDir ./src/simple-own-generator/build --allowJs false --checkJs false"
+    "swagger-codegen": "node ./src/swagger-codegen/swagger-codegen.js"
   },
-  "devDependencies": {
-    "swagger-typescript-api": "9.3.1",
-    "@umijs/openapi": "^1.5.1",
-    "nunjucks": "3.2.4",
-    "@types/nunjucks": "3.2.1"
-  },
+  "devDependencies": {},
   "files": [
     "build/*"
   ]

@@ -9,6 +9,6 @@
     "skipLibCheck": true,
     "target": "ES5"
   },
-  "include": ["src/simple-own-generator/**/*", "typings/**/*"],
-  "exclude": ["build", "dist", "node_modules", "automatic"]
+  "include": ["src"],
+  "exclude": ["automatic"]
 }
