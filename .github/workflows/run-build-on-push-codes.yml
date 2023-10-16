@@ -1,5 +1,12 @@
-name: Run Nx Build ON Push Codes
-on: [push]
+name: Run Build ON Push Codes
+on:
+  push:
+    branches:
+      - '*' # matches every branch that doesn't contain a '/'
+      - '*/*' # matches every branch containing a single '/'
+      - '**' # matches every branch
+      - '!master' # excludes master
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -17,7 +24,7 @@ jobs:
       - name: Install Node Env
         uses: actions/setup-node@v3
         with:
-          node-version: '14.x'
+          node-version: '16.16.0'
       - name: Install Yarn Dependecies
         run: yarn
       - name: Run Build By Yarn

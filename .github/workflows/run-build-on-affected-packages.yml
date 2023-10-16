@@ -1,4 +1,4 @@
-name: Run Nx Build
+name: Run Build ON Affected Packages
 on:
   push:
     branches:
