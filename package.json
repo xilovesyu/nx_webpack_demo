@@ -82,8 +82,8 @@
     "webpack-dev-server": "4.9.1",
     "webpack-merge": "5.8.0",
     "speed-measure-webpack-plugin": "1.5.0",
-    "nx": "latest",
-    "@nrwl/nx-cloud": "latest"
+    "nx": "16.10.0",
+    "@nrwl/nx-cloud": "16.5.2"
   },
   "resolutions": {
     "minimist": "1.2.6"
