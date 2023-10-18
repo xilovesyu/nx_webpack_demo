@@ -15,7 +15,8 @@ module.exports = (env, args) => {
     devServer: {
       port: 3001,
       hot: true,
-      host: '0.0.0.0'
+      host: '0.0.0.0',
+      historyApiFallback: true
       //stats: 'errors-only' //only prints error in console
       //overlay: false, //full screen error display? default is false
       //clientLogLevel: "silent", //silent meaning no 'Waiting for update signal from WDS...' and other.

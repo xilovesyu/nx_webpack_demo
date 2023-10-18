@@ -1,9 +1,12 @@
 const path = require('path')
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const htmlWebpackPluginConfigs = require('./htmlWebpackPluginConfig.js')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin') //removed unused moment locales
+const webpack = require('webpack')
+require('dotenv').config({ debug: true })
 
 //env, webpack env for example, webpack --env entry='./app.js'
 module.exports = (env, args) => {
@@ -104,6 +107,10 @@ module.exports = (env, args) => {
       ].filter(Boolean)
     },
     plugins: [
+      new NodePolyfillPlugin(),
+      new webpack.DefinePlugin({
+        'process.env': JSON.stringify(process.env)
+      }),
       new HtmlWebpackPlugin({
         template: './src/index.html',
         filename: 'index.html',

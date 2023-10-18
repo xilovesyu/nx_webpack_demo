@@ -1,8 +1,9 @@
 import { ConfigProvider, theme } from 'antd'
-import * as React from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import { App } from './App'
 import './index.less'
+import { keyCloakClient } from './keycloak'
 
 const Index = () => {
   return (
@@ -16,4 +17,6 @@ const Index = () => {
   )
 }
 
-ReactDOM.render(<Index />, document.getElementById('content'))
+keyCloakClient.init().finally(() => {
+  ReactDOM.render(<Index />, document.getElementById('content'))
+})
