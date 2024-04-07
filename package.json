@@ -16,7 +16,7 @@
     "@types/react-router": "^5.1.4",
     "@types/react-router-dom": "^5.1.3",
     "antd": "5.3.0",
-    "axios": "0.28.0",
+    "axios": "^1.6.0",
     "cross-env": "7.0.3",
     "intl": "^1.2.5",
     "mobx": "^5.15.4",
@@ -64,7 +64,6 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "5.5.0",
     "husky": "^8.0.0",
-    "lerna": "7.3.0",
     "less": "^3.11.1",
     "less-loader": "11.0.0",
     "lint-staged": "^12.4.2",
@@ -82,20 +81,19 @@
     "webpack-dev-server": "4.9.1",
     "webpack-merge": "5.8.0",
     "speed-measure-webpack-plugin": "1.5.0",
-    "nx": "16.10.0",
-    "@nrwl/nx-cloud": "16.5.2"
+    "nx": "18.2.3",
+    "@nrwl/nx-cloud": "18.0.0"
   },
   "resolutions": {
     "minimist": "1.2.6"
   },
   "scripts": {
     "build": "yarn build:nx",
-    "build:lerna": "lerna run --stream build --loglevel=info",
     "build:nx": "yarn nx run-many --target=build",
     "start": "yarn start:nx",
-    "start:lerna": "lerna run start",
     "start:nx": "yarn nx run-many --target=start",
     "prepare": "husky install",
+    "nx:migrations": "nx migrate --run-migrations",
     "clean": "",
     "prettier_and_stage": "prettier --write --ignore-unknown . ",
     "lint:fix": "eslint --ext *.{js,jsx,ts,tsx} packages/**/src/**/*.{js,jsx,ts,tsx} --fix",

@@ -2,35 +2,59 @@
   "extends": "nx/presets/npm.json",
   "tasksRunnerOptions": {
     "default": {
-      "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "swagger-typescript-api",
-          "umijs-openapi",
-          "swagger-codegen",
-          "simple-own-generator",
-          "simple-own-generator:tsc",
-          "babel",
-          "swc",
-          "build:babel",
-          "build:swc",
-          "build",
-          "tsc",
-          "copyFiles",
-          "build:es",
-          "build:analyze",
-          "build:es:analyze"
-        ],
         "accessToken": "YTVmNTJhNGMtZTUwNi00NzAxLTk5ODQtNjc3MDFiYjViN2I3fHJlYWQtd3JpdGU="
       }
     }
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "cache": true
+    },
+    "swagger-typescript-api": {
+      "cache": true
+    },
+    "umijs-openapi": {
+      "cache": true
+    },
+    "swagger-codegen": {
+      "cache": true
+    },
+    "simple-own-generator": {
+      "cache": true
+    },
+    "simple-own-generator:tsc": {
+      "cache": true
+    },
+    "babel": {
+      "cache": true
+    },
+    "swc": {
+      "cache": true
+    },
+    "build:babel": {
+      "cache": true
+    },
+    "build:swc": {
+      "cache": true
+    },
+    "tsc": {
+      "cache": true
+    },
+    "copyFiles": {
+      "cache": true
+    },
+    "build:es": {
+      "cache": true
+    },
+    "build:analyze": {
+      "cache": true
+    },
+    "build:es:analyze": {
+      "cache": true
     }
   },
-  "affected": {
-    "defaultBase": "master"
-  }
+  "useInferencePlugins": false,
+  "defaultBase": "master"
 }
