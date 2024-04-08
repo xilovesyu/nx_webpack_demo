@@ -89,9 +89,9 @@
   },
   "scripts": {
     "build": "yarn build:nx",
-    "build:nx": "yarn nx run-many --target=build",
+    "build:nx": "yarn nx run-many -t build",
     "start": "yarn start:nx",
-    "start:nx": "yarn nx run-many --target=start",
+    "start:nx": "yarn nx run-many -t start",
     "prepare": "husky install",
     "nx:migrations": "nx migrate --run-migrations",
     "clean": "",

@@ -1,12 +1,5 @@
 {
   "extends": "nx/presets/npm.json",
-  "tasksRunnerOptions": {
-    "default": {
-      "options": {
-        "accessToken": "YTVmNTJhNGMtZTUwNi00NzAxLTk5ODQtNjc3MDFiYjViN2I3fHJlYWQtd3JpdGU="
-      }
-    }
-  },
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
