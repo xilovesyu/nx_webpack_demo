@@ -25,8 +25,10 @@ module.exports = (env, args) => {
       filename: 'index.bundle.[contenthash:6].js'
     },
     externals: {
-      react: 'React', //for import react from html with cdn
-      'react-dom': 'ReactDOM'
+      // 不在使用externals
+      //react: 'React', //for import react from html with cdn
+      //'react-dom': 'ReactDOM',
+      //'react-dom/client': 'ReactDOMClient'
     },
     resolve: {
       extensions: [

@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Demo</title>
-    <script
+    <!-- 不使用externals 来加载remote react -->
+    <!-- <script
       crossorigin
       src="<%= (htmlWebpackPlugin.options.config.reactUrl) %>"
     ></script>
@@ -13,6 +14,7 @@
       crossorigin
       src="<%= (htmlWebpackPlugin.options.config.reactDomUrl) %>"
     ></script>
+    <script crossorigin src="<%= (htmlWebpackPlugin.options.config.reactDomClientUrl) %>"></script> -->
   </head>
 
   <body>
