@@ -3,8 +3,11 @@ import { keyCloakClient } from '../keycloak'
 import { useLocation, useNavigate } from 'react-router'
 import { Button } from 'antd'
 
-export const ProtectedRouteElement: FC = (
-  props: PropsWithChildren<unknown>
+interface ProtectedRouteElementProps {
+  children?: React.ReactNode
+}
+export const ProtectedRouteElement: FC<ProtectedRouteElementProps> = (
+  props: PropsWithChildren<ProtectedRouteElementProps>
 ) => {
   const isLogged = keyCloakClient.authenticated
 
