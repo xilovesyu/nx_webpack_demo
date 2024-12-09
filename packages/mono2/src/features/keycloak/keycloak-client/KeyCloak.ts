@@ -6,6 +6,7 @@ import Keycloak, {
 
 export class KeycloakClient {
   private _keycloakClient: Keycloak
+  private hasInitialized = false
   constructor() {
     this._keycloakClient = new Keycloak({
       clientId: process.env.KEYCLOAK_CLIENT_ID!,
@@ -26,11 +27,13 @@ export class KeycloakClient {
     return this._keycloakClient.userInfo
   }
 
-  init(initOptions?: KeycloakInitOptions | undefined) {
-    return this._keycloakClient.init({
+  async init(initOptions?: KeycloakInitOptions | undefined) {
+    const result = await this._keycloakClient.init({
       onLoad: 'check-sso',
       ...(initOptions ?? {})
     })
+    this.hasInitialized = true
+    return result
   }
 
   createLoginUrl(options?: KeycloakLoginOptions | undefined) {

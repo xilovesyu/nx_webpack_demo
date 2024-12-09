@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { LogoutButton } from '../login'
-import { keyCloakClient } from '../keycloak'
+import { keyCloakClient } from '../keycloak-feature'
 
 export const Admin: FC = () => {
   return (

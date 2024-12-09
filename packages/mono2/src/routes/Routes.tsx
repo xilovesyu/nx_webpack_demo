@@ -1,32 +1,17 @@
 import React, { useMemo } from 'react'
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
-import { LoginPage } from '../login'
-import { Admin } from '../admin'
-import { keyCloakClient } from '../keycloak'
-import { ProtectedRouteElement } from './ProtectedRoute'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { BasicLayout } from './Layout'
+import { RouterError } from './RouterError'
+import { routes } from '../features'
 
 export const Routes = () => {
   const router = useMemo(() => {
     return createBrowserRouter([
       {
         path: '/',
-        element: keyCloakClient.authenticated ? (
-          <Navigate to='/admin' />
-        ) : (
-          <Navigate to='/login' />
-        )
-      },
-      {
-        path: '/login',
-        element: <LoginPage />
-      },
-      {
-        path: '/admin',
-        element: (
-          <ProtectedRouteElement>
-            <Admin />
-          </ProtectedRouteElement>
-        )
+        element: <BasicLayout routes={routes} />,
+        errorElement: <RouterError />,
+        children: routes
       }
     ])
   }, [])
