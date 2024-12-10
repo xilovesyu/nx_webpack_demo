@@ -62,7 +62,8 @@ module.exports = (env, args) => {
           loader: 'esbuild-loader',
           options: {
             loader: 'tsx', // Remove this if you're not using JSX
-            target: 'es2015' // Syntax to compile to (see options below for possible values)
+            target: 'es2015', // Syntax to compile to (see options below for possible values)
+            jsx: 'automatic'
           }
         },
         {

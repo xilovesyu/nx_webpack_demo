@@ -1,5 +1,5 @@
 import { Button } from 'antd'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { useThemeContext } from '../hook'
 
 interface TestPageProps {

@@ -35,6 +35,7 @@ export default [
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:jsx-a11y/recommended',
+    'plugin:react/jsx-runtime',
     'prettier'
   ),
   {
