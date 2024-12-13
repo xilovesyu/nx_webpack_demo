@@ -9,10 +9,11 @@
     "react-router-dom": "6.4.3",
     "keycloak-js": "22.0.4",
     "dotenv": "16.3.1",
+    "lodash": "^4.17.21",
     "node-polyfill-webpack-plugin": "2.0.1"
   },
   "scripts": {
-    "start": "cross-env process.env.ES_BUILD=false process.env.ANALYZE_BUNDLE=false process.env.NODE_ENV='\"development\"' webpack-dev-server --config=webpack.config.dev.js",
+    "start": "cross-env NODE_OPTIONS=--max-old-space-size=6096 process.env.ES_BUILD=true process.env.ANALYZE_BUNDLE=false process.env.NODE_ENV='\"development\"' webpack-dev-server --config=webpack.config.dev.js",
     "start:analyze": "cross-env process.env.ES_BUILD=false process.env.ANALYZE_BUNDLE=true process.env.NODE_ENV='\"development\"' webpack-dev-server --config=webpack.config.dev.js",
     "build": "cross-env process.env.ES_BUILD=true webpack --mode=production --config=webpack.config.prod.js",
     "build:es": "cross-env process.env.ES_BUILD=true webpack --mode=production --config=webpack.config.prod.js",

@@ -13,3 +13,5 @@ automatic
 target
 dist
 .nx/cache
+
+.vscode

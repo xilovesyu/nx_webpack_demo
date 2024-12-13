@@ -104,7 +104,6 @@ export default [
       ],
 
       'no-var-requires': 0,
-      'no-unused-vars': 2,
       '@typescript-eslint/camelcase': 0,
       '@typescript-eslint/no-var-requires': 0,
       '@typescript-eslint/no-explicit-any': 0,

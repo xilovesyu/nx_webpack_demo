@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo } from 'react'
 import { Layout, Menu } from 'antd'
 import { FC } from 'react'
-import { Outlet, RouteObject, useNavigate } from 'react-router-dom'
+import { Outlet, RouteObject, useLocation, useNavigate } from 'react-router-dom'
 import { MenuItemType } from 'antd/es/menu/hooks/useItems'
 
 export interface BasicLayoutProps {
@@ -11,6 +11,10 @@ export interface BasicLayoutProps {
 
 export const BasicLayout: FC<BasicLayoutProps> = ({ routes }) => {
   const navigate = useNavigate()
+  const location = useLocation()
+  const defaultActiveKey = routes?.find(
+    (one) => `/${one.path}` === location?.pathname
+  )?.path
   const menus: MenuItemType[] = useMemo(() => {
     return (
       routes?.map((route) => {
@@ -30,7 +34,14 @@ export const BasicLayout: FC<BasicLayoutProps> = ({ routes }) => {
       <Layout.Header>I am header</Layout.Header>
       <Layout>
         <Layout.Sider>
-          <Menu onClick={onClickRoute} mode='vertical' items={menus} />
+          <Menu
+            defaultSelectedKeys={
+              defaultActiveKey ? [defaultActiveKey] : undefined
+            }
+            onClick={onClickRoute}
+            mode='vertical'
+            items={menus}
+          />
         </Layout.Sider>
         <Layout>
           <Layout.Content className='root-layout-content'>
