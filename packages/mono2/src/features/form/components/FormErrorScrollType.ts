@@ -1,4 +1,4 @@
-import { NamePath } from 'antd/es/form/interface'
+import {NamePath} from 'antd/es/form/interface'
 
 /**
  * Component type to scroll, here direct means direct belongs to form, tab means fields in the tabs.

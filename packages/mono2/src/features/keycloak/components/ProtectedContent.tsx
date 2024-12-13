@@ -1,6 +1,6 @@
-import React, { FC, PropsWithChildren } from 'react'
-import { keyCloakClient } from '..'
-import { Alert } from 'antd'
+import React, {FC, PropsWithChildren} from 'react'
+import {keyCloakClient} from '..'
+import {Alert} from 'antd'
 
 interface ProtectedContentProps {
   children?: React.ReactNode

@@ -1,18 +1,18 @@
-import { Tabs, TabsProps } from 'antd'
-import { FC, useContext, useEffect, useState } from 'react'
+import {Tabs, TabsProps} from 'antd'
+import {FC, useContext, useEffect, useState} from 'react'
 import {
   FormErrorBelongingContext,
   FormErrorSwitchComponentsContext
 } from './FormErrorContext'
 
-type WrapperTabsProps = Omit<TabsProps, 'id'> & { id: string }
+type WrapperTabsProps = Omit<TabsProps, 'id'> & {id: string}
 export const WrapperTabs: FC<WrapperTabsProps> = (props) => {
-  const { children, ...tabProps } = props
+  const {children, ...tabProps} = props
   const [activeKey, setActiveKey] = useState<WrapperTabsProps['activeKey']>(
     tabProps.defaultActiveKey ?? tabProps.activeKey
   )
 
-  const { setBelongingControlInfos } = useContext(
+  const {setBelongingControlInfos} = useContext(
     FormErrorSwitchComponentsContext
   )
 
@@ -42,7 +42,7 @@ export const WrapperTabs: FC<WrapperTabsProps> = (props) => {
       ...item,
       children: (
         <FormErrorBelongingContext.Provider
-          value={{ id: props.id, type: 'tab', specificId: item.key }}
+          value={{id: props.id, type: 'tab', specificId: item.key}}
         >
           {item.children}
         </FormErrorBelongingContext.Provider>
@@ -51,7 +51,7 @@ export const WrapperTabs: FC<WrapperTabsProps> = (props) => {
   })
 
   return (
-    <FormErrorBelongingContext.Provider value={{ id: props.id, type: 'tab' }}>
+    <FormErrorBelongingContext.Provider value={{id: props.id, type: 'tab'}}>
       <Tabs
         {...tabProps}
         items={newItems}

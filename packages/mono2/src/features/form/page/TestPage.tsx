@@ -1,7 +1,7 @@
-import { CustomInput } from '@demo/mono1'
-import { Button, Form, Input } from 'antd'
-import React, { FC } from 'react'
-import { WrapperForm, WrapperFormItem, WrapperTabs } from '../components'
+import {CustomInput} from '@demo/mono1'
+import {Button, Form, Input} from 'antd'
+import React, {FC} from 'react'
+import {WrapperForm, WrapperFormItem, WrapperTabs} from '../components'
 
 interface TestPageProps {
   children?: React.ReactNode
@@ -17,7 +17,7 @@ export const TestPage: FC<TestPageProps> = () => {
       <WrapperForm
         id='test-page-form'
         form={form}
-        initialValues={{ foo: 'foo', foo2: 'foo2' }}
+        initialValues={{foo: 'foo', foo2: 'foo2'}}
         onFinish={(values) => alert(JSON.stringify(values))}
       >
         <WrapperTabs
@@ -33,14 +33,14 @@ export const TestPage: FC<TestPageProps> = () => {
                   <WrapperFormItem
                     name={'foo'}
                     label={'Foo'}
-                    rules={[{ required: true }]}
+                    rules={[{required: true}]}
                   >
                     <CustomInput id='foo' />
                   </WrapperFormItem>
                   <WrapperFormItem
                     name={'foo2'}
                     label={'Foo2'}
-                    rules={[{ required: true }]}
+                    rules={[{required: true}]}
                   >
                     <Input />
                   </WrapperFormItem>
@@ -56,7 +56,7 @@ export const TestPage: FC<TestPageProps> = () => {
                   <WrapperFormItem
                     name={'bar'}
                     label={'Bar'}
-                    rules={[{ required: true }]}
+                    rules={[{required: true}]}
                   >
                     <CustomInput id={'bar'} />
                   </WrapperFormItem>
@@ -66,7 +66,7 @@ export const TestPage: FC<TestPageProps> = () => {
           ]}
         ></WrapperTabs>
 
-        <div style={{ height: '500px' }} />
+        <div style={{height: '500px'}} />
         <Button type='primary' htmlType='submit'>
           Submit
         </Button>

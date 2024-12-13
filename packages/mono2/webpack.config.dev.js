@@ -1,8 +1,8 @@
 const webpack = require('webpack')
-const { merge } = require('webpack-merge')
+const {merge} = require('webpack-merge')
 const baseConfig = require('./webpack.config.base.js')
 //analyzer
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
 
 module.exports = (env, args) => {
   const analyzerMode = process.env.ANALYZE_BUNDLE === 'true'

@@ -1,8 +1,8 @@
-import { Button, Row, Typography } from 'antd'
-import React, { FC, useEffect, useState } from 'react'
-import { keyCloakClient } from '../keycloak-client'
-import { ProtectedContent } from '../components/ProtectedContent'
-import { PublicContent } from '../components/PublicContent'
+import {Button, Row, Typography} from 'antd'
+import React, {FC, useEffect, useState} from 'react'
+import {keyCloakClient} from '../keycloak-client'
+import {ProtectedContent} from '../components/ProtectedContent'
+import {PublicContent} from '../components/PublicContent'
 interface TestPageProps {
   children?: React.ReactNode
 }

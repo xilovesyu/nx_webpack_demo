@@ -1,17 +1,17 @@
-import { ConfigProvider } from 'antd'
-import { createRoot } from 'react-dom/client'
-import { App } from './App'
+import {ConfigProvider} from 'antd'
+import {createRoot} from 'react-dom/client'
+import {App} from './App'
 import './index.less'
-import { ThemeContext, useTheme } from './features'
+import {ThemeContext, useTheme} from './features'
 const Index = () => {
-  const { theme, changeToDark, changeToLight } = useTheme()
+  const {theme, changeToDark, changeToLight} = useTheme()
   return (
     <ConfigProvider
       theme={{
         algorithm: theme
       }}
     >
-      <ThemeContext.Provider value={{ theme, changeToDark, changeToLight }}>
+      <ThemeContext.Provider value={{theme, changeToDark, changeToLight}}>
         <App />
       </ThemeContext.Provider>
     </ConfigProvider>

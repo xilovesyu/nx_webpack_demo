@@ -1,5 +1,5 @@
 import React from 'react'
-import { theme as antdTheme } from 'antd'
+import {theme as antdTheme} from 'antd'
 export interface ThemeContextProps {
   theme: any
   changeToDark: () => void

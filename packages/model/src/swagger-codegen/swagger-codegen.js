@@ -1,4 +1,4 @@
-const { exec } = require('child_process')
+const {exec} = require('child_process')
 const path = require('path')
 
 const url = 'http://192.168.240.33:9000/swagger.json?apiGroup=All%20APIs'

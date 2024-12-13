@@ -1,5 +1,5 @@
-import { RouteObject } from 'react-router'
-import { TestPage } from './page/TestPage'
+import {RouteObject} from 'react-router'
+import {TestPage} from './page/TestPage'
 
 export * from './keycloak-client'
 

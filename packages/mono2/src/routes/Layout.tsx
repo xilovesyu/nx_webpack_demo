@@ -1,15 +1,15 @@
-import React, { useCallback, useMemo } from 'react'
-import { Layout, Menu } from 'antd'
-import { FC } from 'react'
-import { Outlet, RouteObject, useLocation, useNavigate } from 'react-router-dom'
-import { MenuItemType } from 'antd/es/menu/hooks/useItems'
+import React, {useCallback, useMemo} from 'react'
+import {Layout, Menu} from 'antd'
+import {FC} from 'react'
+import {Outlet, RouteObject, useLocation, useNavigate} from 'react-router-dom'
+import {MenuItemType} from 'antd/es/menu/hooks/useItems'
 
 export interface BasicLayoutProps {
   children?: React.ReactNode
   routes?: RouteObject[]
 }
 
-export const BasicLayout: FC<BasicLayoutProps> = ({ routes }) => {
+export const BasicLayout: FC<BasicLayoutProps> = ({routes}) => {
   const navigate = useNavigate()
   const location = useLocation()
   const defaultActiveKey = routes?.find(
@@ -26,7 +26,7 @@ export const BasicLayout: FC<BasicLayoutProps> = ({ routes }) => {
     )
   }, [routes])
 
-  const onClickRoute = useCallback(({ key }: { key: string }) => {
+  const onClickRoute = useCallback(({key}: {key: string}) => {
     navigate(key)
   }, [])
   return (

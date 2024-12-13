@@ -1,6 +1,6 @@
-import { useCallback, useContext, useState } from 'react'
-import { theme as antdTheme } from 'antd'
-import { ThemeContext } from '../context'
+import {useCallback, useContext, useState} from 'react'
+import {theme as antdTheme} from 'antd'
+import {ThemeContext} from '../context'
 export const useTheme = () => {
   const [theme, setTheme] = useState<any>(() => antdTheme.defaultAlgorithm)
 
@@ -23,7 +23,7 @@ export const useTheme = () => {
 }
 
 export const useThemeContext = () => {
-  const { theme, changeToDark, changeToLight } = useContext(ThemeContext)
+  const {theme, changeToDark, changeToLight} = useContext(ThemeContext)
   return {
     theme,
     changeToDark,
