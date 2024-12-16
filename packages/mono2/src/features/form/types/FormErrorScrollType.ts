@@ -26,3 +26,9 @@ export interface FormErrorScrollFieldInfo {
    */
   belongsToSpecificId?: string
 }
+
+export interface BelongingControlInfo {
+  belongsType: FormErrorScrollBelongingType
+  belongsToId: string
+  navigateToSpecificId: (specificId?: string) => void
+}

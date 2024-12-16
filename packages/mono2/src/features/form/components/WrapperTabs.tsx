@@ -1,9 +1,7 @@
 import {Tabs, TabsProps} from 'antd'
-import {FC, useContext, useEffect, useState} from 'react'
-import {
-  FormErrorBelongingContext,
-  FormErrorSwitchComponentsContext
-} from './FormErrorContext'
+import {FC, useEffect, useState} from 'react'
+import {FormErrorBelongingContext} from '../context'
+import {useFormErrorSwitchComponents} from '../hooks'
 
 type WrapperTabsProps = Omit<TabsProps, 'id'> & {id: string}
 export const WrapperTabs: FC<WrapperTabsProps> = (props) => {
@@ -12,8 +10,8 @@ export const WrapperTabs: FC<WrapperTabsProps> = (props) => {
     tabProps.defaultActiveKey ?? tabProps.activeKey
   )
 
-  const {setBelongingControlInfos} = useContext(
-    FormErrorSwitchComponentsContext
+  const setBelongingControlInfos = useFormErrorSwitchComponents(
+    (state) => state.add
   )
 
   useEffect(() => {
@@ -24,16 +22,13 @@ export const WrapperTabs: FC<WrapperTabsProps> = (props) => {
 
   useEffect(() => {
     if (props.id) {
-      setBelongingControlInfos?.((belongingControlInfos) => [
-        ...belongingControlInfos,
-        {
-          belongsType: 'tab',
-          belongsToId: props.id,
-          navigateToSpecificId: (specficId?: string) => {
-            setActiveKey(specficId)
-          }
+      setBelongingControlInfos?.({
+        belongsType: 'tab',
+        belongsToId: props.id,
+        navigateToSpecificId: (specficId?: string) => {
+          setActiveKey(specficId)
         }
-      ])
+      })
     }
   }, [props.id])
 

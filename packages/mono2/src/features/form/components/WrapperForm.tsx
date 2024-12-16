@@ -1,13 +1,8 @@
 import {Form, FormProps} from 'antd'
 import {PropsWithChildren, useEffect} from 'react'
 import {isEqual} from 'lodash'
-import {
-  FormErrorBelongingContext,
-  FormErrorSwitchComponentsContext,
-  FormErrorsFieldsContext,
-  useFormErrorScrollFieldInfos,
-  useFormErrorSwitchComponents
-} from './FormErrorContext'
+import {FormErrorBelongingContext} from '../context'
+import {useFormErrorScrollFields, useFormErrorSwitchComponents} from '../hooks'
 
 type WrapperFormProps<T> = FormProps<T> & {id: string}
 
@@ -15,20 +10,18 @@ export const WrapperForm = <T,>(
   props: PropsWithChildren<WrapperFormProps<T>>
 ) => {
   const {children, id, ...formProps} = props
-  const {fieldInfos, setFieldInfos} = useFormErrorScrollFieldInfos()
-  const {belongingControlInfos, setBelongingControlInfos} =
-    useFormErrorSwitchComponents()
+  const {fieldInfos, add} = useFormErrorScrollFields()
+  const belongingControlInfos = useFormErrorSwitchComponents(
+    (state) => state.belongingControlInfos
+  )
 
   useEffect(() => {
-    setFieldInfos((fieldInfos) => [
-      ...fieldInfos,
-      {
-        path: props.name || '',
-        belongsTo: 'direct',
-        belongsToId: id,
-        belongsToSpecificId: id
-      }
-    ])
+    add({
+      path: props.name || '',
+      belongsTo: 'direct',
+      belongsToId: id,
+      belongsToSpecificId: id
+    })
   }, [id])
 
   const onFinishFailed: FormProps['onFinishFailed'] = (error) => {
@@ -52,20 +45,16 @@ export const WrapperForm = <T,>(
           navigateToSpecificId?.(belongsToSpecificId)
         }
       }
-      props.form?.scrollToField(name)
+      setTimeout(() => {
+        props.form?.scrollToField(name)
+      })
     }
   }
   return (
-    <FormErrorsFieldsContext.Provider value={{fieldInfos, setFieldInfos}}>
-      <FormErrorSwitchComponentsContext.Provider
-        value={{belongingControlInfos, setBelongingControlInfos}}
-      >
-        <FormErrorBelongingContext.Provider value={{type: 'direct', id: id}}>
-          <Form {...formProps} onFinishFailed={onFinishFailed}>
-            {children}
-          </Form>
-        </FormErrorBelongingContext.Provider>
-      </FormErrorSwitchComponentsContext.Provider>
-    </FormErrorsFieldsContext.Provider>
+    <FormErrorBelongingContext.Provider value={{type: 'direct', id: id}}>
+      <Form {...formProps} onFinishFailed={onFinishFailed}>
+        {children}
+      </Form>
+    </FormErrorBelongingContext.Provider>
   )
 }

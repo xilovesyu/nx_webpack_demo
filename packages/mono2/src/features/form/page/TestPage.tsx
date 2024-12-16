@@ -17,7 +17,7 @@ export const TestPage: FC<TestPageProps> = () => {
       <WrapperForm
         id='test-page-form'
         form={form}
-        initialValues={{foo: 'foo', foo2: 'foo2'}}
+        initialValues={{foo: 'foo', foo2: 'foo2', bar: 'bar'}}
         onFinish={(values) => alert(JSON.stringify(values))}
       >
         <WrapperTabs
@@ -59,6 +59,16 @@ export const TestPage: FC<TestPageProps> = () => {
                     rules={[{required: true}]}
                   >
                     <CustomInput id={'bar'} />
+                  </WrapperFormItem>
+                  <WrapperFormItem name={'bar1'} label={'Bar1'}>
+                    <CustomInput id={'bar1'} />
+                  </WrapperFormItem>
+                  <WrapperFormItem
+                    name={'bar2'}
+                    label={'Bar2'}
+                    rules={[{required: true}]}
+                  >
+                    <CustomInput id={'bar2'} />
                   </WrapperFormItem>
                 </div>
               )

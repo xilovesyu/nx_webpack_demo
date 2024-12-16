@@ -1,6 +1,6 @@
 import {Tabs, TabPaneProps} from 'antd'
 import {FC, useContext} from 'react'
-import {FormErrorBelongingContext} from './FormErrorContext'
+import {FormErrorBelongingContext} from '../context'
 
 type WrapperTabPanelProps = TabPaneProps
 
