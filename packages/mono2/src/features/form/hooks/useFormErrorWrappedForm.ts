@@ -12,7 +12,9 @@ export type WrapperFormProps<T> = FormProps<T> & {
   formErrorWrappedProps: WrappedFormPropsSelfProps
 }
 
-export const useFormErrorWrappedForm = <T>(formProps: WrapperFormProps<T>) => {
+export const useFormErrorWrappedForm = <T = any>(
+  formProps: WrapperFormProps<T>
+) => {
   const {
     name,
     onFinishFailed: originFinishFailed,

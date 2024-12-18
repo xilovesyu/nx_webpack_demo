@@ -3,7 +3,7 @@ import {useContext, useEffect} from 'react'
 import {FormErrorBelongingContext} from '../context'
 import {useFormErrorScrollFields} from './useFormErrorScrollFields'
 
-export const useFormErrorWrappedField = <T>(props: FormItemProps<T>) => {
+export const useFormErrorWrappedField = <T = any>(props: FormItemProps<T>) => {
   const {type, id, specificId} = useContext(FormErrorBelongingContext)
   const setFieldInfos = useFormErrorScrollFields((state) => state.add)
   useEffect(() => {
