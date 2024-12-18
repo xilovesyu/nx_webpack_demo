@@ -1,2 +1,5 @@
 export * from './useFormErrorScrollFields'
-export * from './useFromErrorSwitchComponents'
+export * from './useFormErrorSwitchComponents'
+export * from './useFormErrorWrappedForm'
+export * from './useFormErrorWrappedField'
+export * from './useFormErrorWrappedTabs'

@@ -1,4 +1,3 @@
-import {CustomInput} from '@demo/mono1'
 import {Button, Form, Input} from 'antd'
 import React, {FC} from 'react'
 import {WrapperForm, WrapperFormItem, WrapperTabs} from '../components'
@@ -15,7 +14,9 @@ export const TestPage: FC<TestPageProps> = () => {
       A demo for automatic change the tab panel when the first error occurs in
       another panel.
       <WrapperForm
-        id='test-page-form'
+        formErrorWrappedProps={{
+          id: 'test-page-form'
+        }}
         form={form}
         initialValues={{foo: 'foo', foo2: 'foo2', bar: 'bar'}}
         onFinish={(values) => alert(JSON.stringify(values))}
@@ -35,7 +36,7 @@ export const TestPage: FC<TestPageProps> = () => {
                     label={'Foo'}
                     rules={[{required: true}]}
                   >
-                    <CustomInput id='foo' />
+                    <Input />
                   </WrapperFormItem>
                   <WrapperFormItem
                     name={'foo2'}
@@ -58,17 +59,17 @@ export const TestPage: FC<TestPageProps> = () => {
                     label={'Bar'}
                     rules={[{required: true}]}
                   >
-                    <CustomInput id={'bar'} />
+                    <Input />
                   </WrapperFormItem>
                   <WrapperFormItem name={'bar1'} label={'Bar1'}>
-                    <CustomInput id={'bar1'} />
+                    <Input />
                   </WrapperFormItem>
                   <WrapperFormItem
                     name={'bar2'}
                     label={'Bar2'}
                     rules={[{required: true}]}
                   >
-                    <CustomInput id={'bar2'} />
+                    <Input />
                   </WrapperFormItem>
                 </div>
               )
@@ -77,7 +78,7 @@ export const TestPage: FC<TestPageProps> = () => {
         ></WrapperTabs>
 
         <div style={{height: '500px'}} />
-        <Button type='primary' htmlType='submit'>
+        <Button type='primary' onClick={() => form.submit()}>
           Submit
         </Button>
       </WrapperForm>

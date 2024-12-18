@@ -1,6 +1,7 @@
 import {create} from 'zustand'
 import {combine, devtools} from 'zustand/middleware'
 import {FormErrorScrollFieldInfo} from '../types'
+import {isPathEqual} from '../utils'
 
 interface FormErrorScrollFieldInfoStore {
   fieldInfos: FormErrorScrollFieldInfo[]
@@ -13,8 +14,23 @@ export const useFormErrorScrollFields = create<FormErrorScrollFieldInfoStore>()(
         add: (newFieldInfo) =>
           set(
             (state) => {
-              return {
-                fieldInfos: [...state.fieldInfos, newFieldInfo]
+              if (
+                state.fieldInfos.some((fieldInfo) =>
+                  isPathEqual(fieldInfo.path, newFieldInfo.path)
+                )
+              ) {
+                return {
+                  fieldInfos: state.fieldInfos.map((fieldInfo) => {
+                    if (isPathEqual(fieldInfo.path, newFieldInfo.path)) {
+                      return newFieldInfo
+                    }
+                    return fieldInfo
+                  })
+                }
+              } else {
+                return {
+                  fieldInfos: [...state.fieldInfos, newFieldInfo]
+                }
               }
             },
             undefined,
