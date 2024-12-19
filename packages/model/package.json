@@ -4,10 +4,14 @@
   "main": "build/index.js",
   "license": "MIT",
   "scripts": {
-    "swagger-codegen": "node ./src/swagger-codegen/swagger-codegen.js"
+    "swagger-codegen": "node ./src/swagger-codegen/swagger-codegen.js",
+    "swagger-typescript-api": "ts-node ./src/swagger-typescript-api/swaggerTypescriptApiGenerator.ts"
   },
   "devDependencies": {},
   "files": [
     "build/*"
-  ]
+  ],
+  "dependencies": {
+    "ts-node": "^10.9.2"
+  }
 }
