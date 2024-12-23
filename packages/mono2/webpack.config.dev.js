@@ -6,6 +6,7 @@ const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
 
 module.exports = (env, args) => {
   const analyzerMode = process.env.ANALYZE_BUNDLE === 'true'
+  const port = process.env.PORT || 3001
 
   return merge(baseConfig(env, args), {
     plugins: [
@@ -13,7 +14,10 @@ module.exports = (env, args) => {
       analyzerMode && new BundleAnalyzerPlugin()
     ].filter(Boolean),
     devServer: {
-      port: 3001,
+      client: {
+        progress: true
+      },
+      port: port,
       hot: true,
       host: '0.0.0.0',
       historyApiFallback: true

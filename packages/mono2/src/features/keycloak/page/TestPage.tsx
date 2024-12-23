@@ -25,7 +25,7 @@ export const TestPage: FC<TestPageProps> = () => {
 
   const onClickLoginSSO = () => {
     const url = keyCloakClient.createLoginUrl({
-      redirectUri: window.location.origin + '/'
+      redirectUri: window.location.origin + '/keycloak'
     })
     window.location.assign(url)
   }
