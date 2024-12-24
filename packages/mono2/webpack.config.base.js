@@ -10,8 +10,7 @@ require('dotenv').config({debug: true})
 
 //env, webpack env for example, webpack --env entry='./app.js'
 module.exports = (env, args) => {
-  const mode =
-    process.env.NODE_ENV === 'development' ? 'development' : 'production'
+  const mode = process.env.NODE_ENV === 'development' ? 'development' : 'production'
   const isProduction = mode === 'production'
   const useEsBuild = process.env.ES_BUILD === 'true' ?? false
 
@@ -31,17 +30,7 @@ module.exports = (env, args) => {
       //'react-dom/client': 'ReactDOMClient'
     },
     resolve: {
-      extensions: [
-        '.ts',
-        '.tsx',
-        '.web.js',
-        '.js',
-        '.json',
-        '.css',
-        '.png',
-        '.gif',
-        '.svg'
-      ]
+      extensions: ['.ts', '.tsx', '.web.js', '.js', '.json', '.css', '.png', '.gif', '.svg']
     },
     module: {
       rules: [
@@ -117,8 +106,7 @@ module.exports = (env, args) => {
       new HtmlWebpackPlugin({
         template: './src/index.html',
         filename: 'index.html',
-        config:
-          htmlWebpackPluginConfigs[isProduction ? 'production' : 'development']
+        config: htmlWebpackPluginConfigs[isProduction ? 'production' : 'development']
       }),
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({

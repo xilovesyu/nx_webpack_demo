@@ -1,8 +1,4 @@
-import Keycloak, {
-  KeycloakInitOptions,
-  KeycloakLoginOptions,
-  KeycloakLogoutOptions
-} from 'keycloak-js'
+import Keycloak, {KeycloakInitOptions, KeycloakLoginOptions, KeycloakLogoutOptions} from 'keycloak-js'
 
 export class KeycloakClient {
   private _keycloakClient: Keycloak

@@ -4,9 +4,7 @@ import {InputProps} from 'antd/lib/input'
 interface CustomInputProps extends InputProps {
   id: string
 }
-export const CustomInput: React.FC<CustomInputProps> = (
-  props: CustomInputProps
-) => {
+export const CustomInput: React.FC<CustomInputProps> = (props: CustomInputProps) => {
   const {id} = props
   return (
     <div>

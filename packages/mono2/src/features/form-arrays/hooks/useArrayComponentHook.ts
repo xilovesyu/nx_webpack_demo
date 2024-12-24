@@ -12,14 +12,9 @@ export type EditItemsReducerAction<T extends object> = {
   previous: T | null
 }
 
-export const useArrayComponentStateHook = <T extends object>(
-  fieldKey: FieldKeyProp<T>
-) => {
+export const useArrayComponentStateHook = <T extends object>(fieldKey: FieldKeyProp<T>) => {
   const [editItems, dispatchEditItems] = useReducer<
-    (
-      state: EditItemsReducerState<T>,
-      action: EditItemsReducerAction<T>
-    ) => EditItemsReducerState<T>
+    (state: EditItemsReducerState<T>, action: EditItemsReducerAction<T>) => EditItemsReducerState<T>
   >((state, action) => {
     const newEditItem: EditItemProps<T> = {
       current: action.current,
@@ -117,24 +112,19 @@ export const useArrayComponentActionHook = <T extends object>({
     [onConfirm]
   )
 
-  const cancelCard = useCallback(
-    (field: T, currentEditItem: EditItemProps<T> | null) => {
-      const {current, previous} = currentEditItem ?? {}
-      dispatchEditItems({
-        type: 'cancel',
-        current: field,
-        previous: null
-      })
-      if (current === undefined || previous === undefined) {
-        console.error(
-          `cancel action: current is ${current}, previous is ${previous}. These two should not be undefined`
-        )
-      } else {
-        onCancel(current, previous)
-      }
-    },
-    []
-  )
+  const cancelCard = useCallback((field: T, currentEditItem: EditItemProps<T> | null) => {
+    const {current, previous} = currentEditItem ?? {}
+    dispatchEditItems({
+      type: 'cancel',
+      current: field,
+      previous: null
+    })
+    if (current === undefined || previous === undefined) {
+      console.error(`cancel action: current is ${current}, previous is ${previous}. These two should not be undefined`)
+    } else {
+      onCancel(current, previous)
+    }
+  }, [])
 
   return {
     addCard,
@@ -145,16 +135,12 @@ export const useArrayComponentActionHook = <T extends object>({
   }
 }
 
-export const useArrayComponentHook = <T extends object>(
-  fieldKey: FieldKeyProp<T>,
-  actions: ArrayActionProps<T>
-) => {
+export const useArrayComponentHook = <T extends object>(fieldKey: FieldKeyProp<T>, actions: ArrayActionProps<T>) => {
   const {editItems, dispatchEditItems} = useArrayComponentStateHook<T>(fieldKey)
-  const {addCard, editCard, removeCard, confirmCard, cancelCard} =
-    useArrayComponentActionHook<T>({
-      dispatchEditItems,
-      actions
-    })
+  const {addCard, editCard, removeCard, confirmCard, cancelCard} = useArrayComponentActionHook<T>({
+    dispatchEditItems,
+    actions
+  })
 
   return {
     editItems,

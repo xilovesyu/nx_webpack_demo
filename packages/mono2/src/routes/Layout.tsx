@@ -12,9 +12,7 @@ export interface BasicLayoutProps {
 export const BasicLayout: FC<BasicLayoutProps> = ({routes}) => {
   const navigate = useNavigate()
   const location = useLocation()
-  const defaultActiveKey = routes?.find(
-    (one) => `/${one.path}` === location?.pathname
-  )?.path
+  const defaultActiveKey = routes?.find((one) => `/${one.path}` === location?.pathname)?.path
   const menus: MenuItemType[] = useMemo(() => {
     return (
       routes?.map((route) => {
@@ -35,9 +33,7 @@ export const BasicLayout: FC<BasicLayoutProps> = ({routes}) => {
       <Layout>
         <Layout.Sider>
           <Menu
-            defaultSelectedKeys={
-              defaultActiveKey ? [defaultActiveKey] : undefined
-            }
+            defaultSelectedKeys={defaultActiveKey ? [defaultActiveKey] : undefined}
             onClick={onClickRoute}
             mode='vertical'
             items={menus}

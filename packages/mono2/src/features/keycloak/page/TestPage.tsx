@@ -42,9 +42,7 @@ export const TestPage: FC<TestPageProps> = () => {
     <div>
       <Button onClick={onClickLoginSSO}>Login in with SSO</Button>
       <Button onClick={onClickLogOutSSO}>Logout</Button>
-      <Typography.Text>
-        Logged in? : {isAuthenticated ? 'true' : 'false'}
-      </Typography.Text>
+      <Typography.Text>Logged in? : {isAuthenticated ? 'true' : 'false'}</Typography.Text>
       <ProtectedContent>
         <Row>
           <Typography.Text>You are viewing protected content</Typography.Text>

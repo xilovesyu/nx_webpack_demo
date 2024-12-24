@@ -11,8 +11,7 @@ export const TestPage: FC<TestPageProps> = () => {
 
   return (
     <div>
-      A demo for automatic change the tab panel when the first error occurs in
-      another panel.
+      A demo for automatic change the tab panel when the first error occurs in another panel.
       <WrapperForm
         formErrorWrappedProps={{
           id: 'test-page-form'
@@ -31,18 +30,10 @@ export const TestPage: FC<TestPageProps> = () => {
               label: 'First Tab',
               children: (
                 <div>
-                  <WrapperFormItem
-                    name={'foo'}
-                    label={'Foo'}
-                    rules={[{required: true}]}
-                  >
+                  <WrapperFormItem name={'foo'} label={'Foo'} rules={[{required: true}]}>
                     <Input />
                   </WrapperFormItem>
-                  <WrapperFormItem
-                    name={'foo2'}
-                    label={'Foo2'}
-                    rules={[{required: true}]}
-                  >
+                  <WrapperFormItem name={'foo2'} label={'Foo2'} rules={[{required: true}]}>
                     <Input />
                   </WrapperFormItem>
                 </div>
@@ -54,21 +45,13 @@ export const TestPage: FC<TestPageProps> = () => {
               label: 'Second Tab',
               children: (
                 <div>
-                  <WrapperFormItem
-                    name={'bar'}
-                    label={'Bar'}
-                    rules={[{required: true}]}
-                  >
+                  <WrapperFormItem name={'bar'} label={'Bar'} rules={[{required: true}]}>
                     <Input />
                   </WrapperFormItem>
                   <WrapperFormItem name={'bar1'} label={'Bar1'}>
                     <Input />
                   </WrapperFormItem>
-                  <WrapperFormItem
-                    name={'bar2'}
-                    label={'Bar2'}
-                    rules={[{required: true}]}
-                  >
+                  <WrapperFormItem name={'bar2'} label={'Bar2'} rules={[{required: true}]}>
                     <Input />
                   </WrapperFormItem>
                 </div>

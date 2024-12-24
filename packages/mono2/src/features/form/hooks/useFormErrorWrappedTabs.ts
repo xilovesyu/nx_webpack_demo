@@ -3,13 +3,9 @@ import {useState, useEffect, useCallback} from 'react'
 import {useFormErrorSwitchComponents} from './useFormErrorSwitchComponents'
 
 export const useFormErrorWrappedTabs = (props: TabsProps) => {
-  const [activeKey, setActiveKey] = useState<string | undefined>(
-    props.activeKey ?? props.defaultActiveKey
-  )
+  const [activeKey, setActiveKey] = useState<string | undefined>(props.activeKey ?? props.defaultActiveKey)
 
-  const setBelongingControlInfos = useFormErrorSwitchComponents(
-    (state) => state.add
-  )
+  const setBelongingControlInfos = useFormErrorSwitchComponents((state) => state.add)
 
   useEffect(() => {
     const changedActiveKeyProp = props.activeKey ?? props.defaultActiveKey

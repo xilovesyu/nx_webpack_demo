@@ -12,19 +12,11 @@ export type WrapperFormProps<T> = FormProps<T> & {
   formErrorWrappedProps: WrappedFormPropsSelfProps
 }
 
-export const useFormErrorWrappedForm = <T = any>(
-  formProps: WrapperFormProps<T>
-) => {
-  const {
-    name,
-    onFinishFailed: originFinishFailed,
-    formErrorWrappedProps
-  } = formProps
+export const useFormErrorWrappedForm = <T = any>(formProps: WrapperFormProps<T>) => {
+  const {name, onFinishFailed: originFinishFailed, formErrorWrappedProps} = formProps
   const {switchingComponentsWhenError = true, id} = formErrorWrappedProps ?? {}
   const {fieldInfos, add} = useFormErrorScrollFields()
-  const belongingControlInfos = useFormErrorSwitchComponents(
-    (state) => state.belongingControlInfos
-  )
+  const belongingControlInfos = useFormErrorSwitchComponents((state) => state.belongingControlInfos)
 
   useEffect(() => {
     add({
@@ -39,15 +31,12 @@ export const useFormErrorWrappedForm = <T = any>(
     const {errorFields} = error
     if (errorFields?.[0] && switchingComponentsWhenError) {
       const {name} = errorFields[0]
-      const currentFieldInfo = fieldInfos.find((one) =>
-        isPathEqual(one.path, name)
-      )
+      const currentFieldInfo = fieldInfos.find((one) => isPathEqual(one.path, name))
       if (currentFieldInfo) {
         const {belongsTo, belongsToId, belongsToSpecificId} = currentFieldInfo
         if (belongsTo !== 'direct') {
           const belongingControlInfo = belongingControlInfos.find(
-            (one) =>
-              one.belongsType === belongsTo && one.belongsToId === belongsToId
+            (one) => one.belongsType === belongsTo && one.belongsToId === belongsToId
           )
           belongingControlInfo?.navigateToSpecificId?.(belongsToSpecificId)
         }

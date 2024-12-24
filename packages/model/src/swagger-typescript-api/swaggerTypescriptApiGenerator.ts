@@ -7,10 +7,7 @@ generateApi({
   // set to `false` to prevent the tool from writing to disk
   output: path.resolve(process.cwd(), './src/swagger-typescript-api/automatic'),
   //url: 'http://api.com/swagger.json',
-  input: path.resolve(
-    process.cwd(),
-    './src/swagger-typescript-api/target/petstore.json'
-  ),
+  input: path.resolve(process.cwd(), './src/swagger-typescript-api/target/petstore.json'),
   //   spec: {
   //     swagger: '2.0',
   //     info: {
@@ -82,14 +79,7 @@ generateApi({
     requestBodySuffix: ['Payload', 'Body', 'Input'],
     requestParamsSuffix: ['Params'],
     responseBodySuffix: ['Data', 'Result', 'Output'],
-    responseErrorSuffix: [
-      'Error',
-      'Fail',
-      'Fails',
-      'ErrorData',
-      'HttpError',
-      'BadResponse'
-    ]
+    responseErrorSuffix: ['Error', 'Fail', 'Fails', 'ErrorData', 'HttpError', 'BadResponse']
   }
   /** allow to generate extra files based with this extra templates, see more below */
   //   extraTemplates: [],

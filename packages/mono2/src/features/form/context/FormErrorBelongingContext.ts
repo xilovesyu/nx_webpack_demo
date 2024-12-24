@@ -10,8 +10,7 @@ interface FormErrorBelongingContextProps {
   specificId?: string
 }
 
-export const FormErrorBelongingContext =
-  React.createContext<FormErrorBelongingContextProps>({
-    type: 'direct',
-    id: 'default-id'
-  })
+export const FormErrorBelongingContext = React.createContext<FormErrorBelongingContextProps>({
+  type: 'direct',
+  id: 'default-id'
+})

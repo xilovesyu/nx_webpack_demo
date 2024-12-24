@@ -10,9 +10,7 @@ export const WrapperTabPanel: FC<WrapperTabPanelProps> = (props) => {
 
   return (
     <Tabs.TabPane {...tabProps}>
-      <FormErrorBelongingContext.Provider
-        value={{type, id, specificId: props.tabKey}}
-      >
+      <FormErrorBelongingContext.Provider value={{type, id, specificId: props.tabKey}}>
         {children}
       </FormErrorBelongingContext.Provider>
     </Tabs.TabPane>

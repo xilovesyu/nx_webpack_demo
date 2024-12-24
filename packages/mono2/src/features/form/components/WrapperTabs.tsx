@@ -14,9 +14,7 @@ export const WrapperTabs: FC<WrapperTabsProps> = (props) => {
     return {
       ...item,
       children: (
-        <FormErrorBelongingContext.Provider
-          value={{id: props.id, type: 'tab', specificId: item.key}}
-        >
+        <FormErrorBelongingContext.Provider value={{id: props.id, type: 'tab', specificId: item.key}}>
           {item.children}
         </FormErrorBelongingContext.Provider>
       )
@@ -25,12 +23,7 @@ export const WrapperTabs: FC<WrapperTabsProps> = (props) => {
 
   return (
     <FormErrorBelongingContext.Provider value={{id: props.id, type: 'tab'}}>
-      <Tabs
-        {...tabProps}
-        items={newItems}
-        activeKey={activeKey}
-        onChange={setActiveKey}
-      >
+      <Tabs {...tabProps} items={newItems} activeKey={activeKey} onChange={setActiveKey}>
         {children}
       </Tabs>
     </FormErrorBelongingContext.Provider>

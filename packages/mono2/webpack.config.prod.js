@@ -1,7 +1,6 @@
 const {merge} = require('webpack-merge')
 const baseConfig = require('./webpack.config.base')
-const BundleAnalyzerPlugin =
-  require('webpack-bundle-analyzer').BundleAnalyzerPlugin //analyzer
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin //analyzer
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
@@ -20,9 +19,6 @@ module.exports = (env, args) => {
         new CssMinimizerPlugin()
       ]
     },
-    plugins: [
-      bundleAnalyzer && new BundleAnalyzerPlugin(),
-      speedAnalyzer && new SpeedMeasurePlugin()
-    ].filter(Boolean)
+    plugins: [bundleAnalyzer && new BundleAnalyzerPlugin(), speedAnalyzer && new SpeedMeasurePlugin()].filter(Boolean)
   })
 }

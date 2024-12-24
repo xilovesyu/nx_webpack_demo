@@ -14,11 +14,7 @@ export const useFormErrorScrollFields = create<FormErrorScrollFieldInfoStore>()(
         add: (newFieldInfo) =>
           set(
             (state) => {
-              if (
-                state.fieldInfos.some((fieldInfo) =>
-                  isPathEqual(fieldInfo.path, newFieldInfo.path)
-                )
-              ) {
+              if (state.fieldInfos.some((fieldInfo) => isPathEqual(fieldInfo.path, newFieldInfo.path))) {
                 return {
                   fieldInfos: state.fieldInfos.map((fieldInfo) => {
                     if (isPathEqual(fieldInfo.path, newFieldInfo.path)) {
