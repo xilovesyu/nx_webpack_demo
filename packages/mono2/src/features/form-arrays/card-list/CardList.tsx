@@ -9,6 +9,7 @@ import {
 import {defaultFieldKey} from '../constant'
 import {AddButton} from './action-buttons'
 import {EditItemProps} from '../types'
+import './CardList.less'
 
 export type ArrayActionProps<T extends object> = {
   onAdd: () => T

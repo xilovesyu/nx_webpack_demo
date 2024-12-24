@@ -1,0 +1,37 @@
+.card-list-item {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s ease;
+
+  .edit-content,
+  .display-content {
+    margin-bottom: 5px;
+  }
+
+  .edit-action,
+  .display-action {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .edit-action__default-actions,
+  .display-action__default-actions {
+    display: flex;
+    flex-wrap: wrap;
+
+    button {
+      flex: 1;
+    }
+    button:not(:last-child) {
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &:hover {
+    border-color: #007bff;
+  }
+}

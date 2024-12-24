@@ -15,6 +15,7 @@ import {
 } from '../action-buttons'
 import {Mode} from '../../types'
 import {CommonActionButtonProps} from '../action-buttons/component/CommonActionButton'
+import './CardListItem.less'
 
 export const ModeEnum = {
   edit: 'edit' as Mode,
@@ -145,7 +146,7 @@ export const CardListItem = <T extends object>(
                   cancelCard={cancelCard}
                 />
               ) : (
-                <div>
+                <div className='edit-action__default-actions'>
                   <ConfirmButton
                     {...(confirmButtonProps ?? {})}
                     onClick={confirmCard}
@@ -178,7 +179,7 @@ export const CardListItem = <T extends object>(
                   cancelCard={cancelCard}
                 />
               ) : (
-                <div>
+                <div className='display-action__default-actions'>
                   <EditButton {...(editButtonProps ?? {})} onClick={editCard} />
                   <DeleteButton
                     {...(deleteButtonProps ?? {})}

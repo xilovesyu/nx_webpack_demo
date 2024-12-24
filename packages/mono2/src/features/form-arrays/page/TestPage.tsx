@@ -4,20 +4,27 @@ import {Button, Input} from 'antd'
 import {CardList, CardListRef} from '../card-list/CardList'
 import './index.less'
 import {CheckSquareOutlined} from '@ant-design/icons'
-
+import {create} from 'zustand'
+import {useShallow} from 'zustand/react/shallow'
 interface TestPageProps {
   testId?: string
 }
 
-const ContentRenderer: FC = () => {
-  return (
-    <div>
-      <Input />
-    </div>
+const useCardListItemStore = create<{
+  cardItemValue: string
+  setCardItemValue: (value: string) => void
+}>((set) => {
+  return {
+    cardItemValue: '',
+    setCardItemValue: (value: string) => set({cardItemValue: value})
+  }
+})
+
+const CardItemContentRender = () => {
+  const [value, setValue] = useCardListItemStore(
+    useShallow((state) => [state.cardItemValue, state.setCardItemValue])
   )
-}
-const DisplayContentRenderer: FC = () => {
-  return <div>DisplayContentRenderer</div>
+  return <Input value={value} onChange={(e) => setValue(e?.target?.value)} />
 }
 
 const CardListContentRenderer = (
@@ -44,6 +51,10 @@ const CardListDisplayContentRenderer = (
 }
 
 export const TestPage: FC<TestPageProps> = () => {
+  //card item value
+  const cardItemValue = useCardListItemStore((state) => state.cardItemValue)
+
+  //card list demo
   const [list, setList] = useState<{id: string; value: number | string}[]>([])
   const [count, setCount] = useState(0)
   const cardListRef =
@@ -55,9 +66,9 @@ export const TestPage: FC<TestPageProps> = () => {
         <CardListItem
           defaultMode={'edit'}
           editConfig={{
-            ContentRenderer: ContentRenderer
+            ContentRenderer: CardItemContentRender
           }}
-          displayConfig={{ContentRenderer: DisplayContentRenderer}}
+          displayConfig={{ContentRenderer: () => <span>{cardItemValue}</span>}}
         />
       </div>
       <div className='test-box'>
