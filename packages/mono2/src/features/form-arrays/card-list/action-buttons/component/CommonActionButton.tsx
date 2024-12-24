@@ -3,12 +3,10 @@ import {ComponentClass, FC} from 'react'
 import cn from 'classnames'
 
 export interface CommonActionButtonProps {
-  Renderer?:
-    | FC<CommonActionButtonProps>
-    | ComponentClass<CommonActionButtonProps>
+  Renderer?: FC<CommonActionButtonProps> | ComponentClass<CommonActionButtonProps>
   onClick: () => void | Promise<void>
   className?: string
-  buttonProps?: Omit<ButtonProps, 'className'>
+  buttonProps?: Omit<ButtonProps, 'className' | 'onClick'>
   children?: React.ReactNode
 }
 
@@ -17,20 +15,10 @@ export const CommonActionButton: FC<CommonActionButtonProps> = (props) => {
   const {Renderer, onClick, className, buttonProps, children} = props
 
   if (Renderer) {
-    return (
-      <Renderer
-        {...buttonProps}
-        className={cn(DEFAUTL_CLASS_NAME, className)}
-        onClick={onClick}
-      />
-    )
+    return <Renderer {...buttonProps} className={cn(DEFAUTL_CLASS_NAME, className)} onClick={onClick} />
   }
   return (
-    <Button
-      {...buttonProps}
-      className={cn(DEFAUTL_CLASS_NAME, className)}
-      onClick={onClick}
-    >
+    <Button {...buttonProps} className={cn(DEFAUTL_CLASS_NAME, className)} onClick={onClick}>
       {children}
     </Button>
   )

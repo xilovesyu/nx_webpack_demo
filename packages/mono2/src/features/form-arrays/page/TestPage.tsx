@@ -21,15 +21,11 @@ const useCardListItemStore = create<{
 })
 
 const CardItemContentRender = () => {
-  const [value, setValue] = useCardListItemStore(
-    useShallow((state) => [state.cardItemValue, state.setCardItemValue])
-  )
+  const [value, setValue] = useCardListItemStore(useShallow((state) => [state.cardItemValue, state.setCardItemValue]))
   return <Input value={value} onChange={(e) => setValue(e?.target?.value)} />
 }
 
-const CardListContentRenderer = (
-  props: CardListItemProps<{id: string; value: number | string}>
-) => {
+const CardListContentRenderer = (props: CardListItemProps<{id: string; value: number | string}>) => {
   const [value, setValue] = useState(props.currentValue?.value)
   return (
     <Input
@@ -44,9 +40,7 @@ const CardListContentRenderer = (
   )
 }
 
-const CardListDisplayContentRenderer = (
-  props: CardListItemProps<{id: string; value: number | string}>
-) => {
+const CardListDisplayContentRenderer = (props: CardListItemProps<{id: string; value: number | string}>) => {
   return <div>{props.currentValue?.value ?? '-'}</div>
 }
 
@@ -57,8 +51,7 @@ export const TestPage: FC<TestPageProps> = () => {
   //card list demo
   const [list, setList] = useState<{id: string; value: number | string}[]>([])
   const [count, setCount] = useState(0)
-  const cardListRef =
-    useRef<CardListRef<{id: string; value: number | string}>>(null)
+  const cardListRef = useRef<CardListRef<{id: string; value: number | string}>>(null)
   return (
     <div>
       <div className='test-box'>
@@ -76,20 +69,49 @@ export const TestPage: FC<TestPageProps> = () => {
         <CardList<{id: string; value: number | string}>
           ref={cardListRef}
           fields={list}
+          addButtonConfig={{
+            disabled: (fields) => {
+              return (fields?.length ?? 0) >= 13
+            }
+          }}
           cardItemProps={{
             editConfig: {
               ContentRenderer: CardListContentRenderer,
+              cancelButtonProps: {
+                disabled: true
+              },
               confirmButtonProps: {
                 Renderer: (props) => (
                   <Button {...props} icon={<CheckSquareOutlined />}>
                     Confirm
                   </Button>
-                )
+                ),
+                disabled: (value) => {
+                  if ((value?.id?.length ?? 0) <= 1) {
+                    return ['1', '3', '5'].includes(value?.id ?? '')
+                  }
+                  if (value?.id === '10') {
+                    return undefined
+                  }
+                  if (value?.id === '11') {
+                    return new Promise((resolve) => {
+                      setTimeout(() => resolve(true), 1000)
+                    })
+                  }
+                  if (value?.id === '12') {
+                    return new Promise((resolve) => {
+                      setTimeout(() => resolve(false), 1000)
+                    })
+                  }
+                  return false
+                }
               }
             },
             displayConfig: {
               ContentRenderer: CardListDisplayContentRenderer,
               deleteButtonProps: {
+                disabled: null,
+                hidden: (field) => ['2', '4', '6'].includes(field?.id ?? ''),
                 buttonProps: {
                   type: 'primary',
                   danger: true
@@ -119,18 +141,25 @@ export const TestPage: FC<TestPageProps> = () => {
               setList((list) => list.filter((item) => item.id !== current.id))
             }
             if (previous && current) {
-              setList((list) =>
-                list.map((item) => (item.id === current.id ? previous : item))
-              )
+              setList((list) => list.map((item) => (item.id === current.id ? previous : item)))
             }
           }}
         />
+        <br />
         <Button
           onClick={() => {
             cardListRef?.current?.addCard()
           }}
         >
           Add item by ref
+        </Button>
+        <br />
+        <Button
+          onClick={() => {
+            cardListRef?.current?.confirmCard(list[1])
+          }}
+        >
+          Confirm item by ref
         </Button>
       </div>
     </div>
